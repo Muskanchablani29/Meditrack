@@ -1,0 +1,77 @@
+/* TypingAnimation.css */
+
+.key-animation {
+    font-family: Arial, sans-serif;
+    background-color: #f3f4f6;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.container {
+    text-align: center;
+}
+
+h2 {
+    margin-bottom: 20px;
+}
+
+.search-bar {
+    width: 500px;
+    padding: 15px;
+    font-size: 22px;
+    border: 2px solid #4a90e2;
+    border-radius: 10px;
+    text-align: left;
+    outline: none;
+    background: white;
+    color: black;
+    text-transform: capitalize;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    transition: 0.3s;
+}
+
+.keyboard {
+    display: grid;
+    grid-template-columns: repeat(14, 1fr);
+    gap: 6px;
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 12px;
+    background: white;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.key {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    color: #333;
+    border: 1px solid #b0bec5;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    user-select: none;
+    transition: box-shadow 0.3s ease, transform 0.1s;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.key.space {
+    grid-column: 5 / span 6;
+}
+
+.key.active {
+    background: linear-gradient(45deg, #444, #888);
+    color: white;
+    transform: scale(1.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
