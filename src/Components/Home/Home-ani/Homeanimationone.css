@@ -1,77 +1,100 @@
-/* TypingAnimation.css */
+/* HomeThirdAnimation.css */
 
-.key-animation {
-    font-family: Arial, sans-serif;
-    background-color: #f3f4f6;
-    color: #333;
-    margin: 0;
-    padding: 0;
+.animation-container {
+    width: 950px;
+    height: 450px;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    height: 100vh;
+    justify-content: center;
+    background: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     overflow: hidden;
-}
-
-.container {
-    text-align: center;
-}
-
-h2 {
-    margin-bottom: 20px;
+    padding: 10px;
 }
 
 .search-bar {
-    width: 500px;
-    padding: 15px;
-    font-size: 22px;
+    width: 90%;
+    max-width: 500px;
+    padding: 0.8rem;
+    font-size: 18px;
     border: 2px solid #4a90e2;
     border-radius: 10px;
-    text-align: left;
+    text-align: center;
     outline: none;
     background: white;
-    color: black;
-    text-transform: capitalize;
-    font-weight: bold;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
-    transition: 0.3s;
+    color: #333;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.keyboard-container {
+    width: 95%;
+    max-width: 900px;
+    margin-top: 1rem;
+    padding: 1rem;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .keyboard {
     display: grid;
     grid-template-columns: repeat(14, 1fr);
     gap: 6px;
-    margin-top: 20px;
-    padding: 20px;
-    border-radius: 12px;
-    background: white;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    justify-items: center;
 }
 
+/* Define specific key widths for realistic layout */
 .key {
-    height: 50px;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: white;
-    color: #333;
-    border: 1px solid #b0bec5;
-    border-radius: 6px;
-    font-size: 16px;
+    padding: 12px;
+    background: #ffffff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
     font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    min-width: 45px;
+    min-height: 45px;
     text-transform: uppercase;
-    user-select: none;
-    transition: box-shadow 0.3s ease, transform 0.1s;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    text-align: center;
 }
 
+/* Adjust specific keys to be larger */
 .key.space {
-    grid-column: 5 / span 6;
+    grid-column: span 5;
+    min-width: 200px;
 }
 
+.key.tab, .key.caps, .key.shift, .key.enter, .key.backspace {
+    grid-column: span 2;
+}
+
+.key.ctrl, .key.win, .key.alt, .key.fn {
+    grid-column: span 1;
+}
+
+/* Glowing effect when key is pressed */
 .key.active {
-    background: linear-gradient(45deg, #444, #888);
+    background: linear-gradient(135deg, #4a90e2, #357abd);
     color: white;
-    transform: scale(1.1);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    transform: translateY(-2px);
+    box-shadow: 0 0 10px rgba(74, 144, 226, 0.8);
+}
+
+/* Key press animation */
+@keyframes keyPress {
+    0% { transform: translateY(0); box-shadow: 0 0 10px rgba(74, 144, 226, 0.8); }
+    50% { transform: translateY(-4px); box-shadow: 0 0 20px rgba(74, 144, 226, 1); }
+    100% { transform: translateY(0); box-shadow: 0 0 10px rgba(74, 144, 226, 0.8); }
+}
+
+.key:active {
+    animation: keyPress 0.3s ease;
 }

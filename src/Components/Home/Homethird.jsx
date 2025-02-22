@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import './Homethird.css'; // Import the CSS file
-import Animation1 from './Home-ani/Homeanimationone'
+import TypingAnimation from './Home-ani/Homeanimationone';
+import TypingAnimationtwo from './Home-ani/Homeanimationtwo';
+import TypingAnimationthree from './Home-ani/Homeanimationthree';
+import TypingAnimationfour from './Home-ani/Homeanimationfour';
+
 const StepByStepAnimation = () => {
   const [currentStep, setCurrentStep] = useState(0);
 
@@ -26,27 +30,45 @@ const StepByStepAnimation = () => {
     return () => clearInterval(interval);
   }, []);
 
-  return (
-    <div className="container">
-      <div className="steps-container" style={{ display: 'flex', gap: '15px', justifyContent: 'center', alignItems: 'center' }}>
-        {steps.map((step, index) => (
-          <div
-            key={index}
-            className={`step ${currentStep === index ? 'active' : currentStep > index ? 'dim' : ''}`}
-            style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}
-          >
-            {index + 1}
-          </div>
-        ))}
-      </div>
+  const renderAnimation = () => {
+    switch (currentStep) {
+      case 0:
+        return <TypingAnimation />;
+      case 1:
+        return <TypingAnimationtwo />;
+      case 2:
+        return <TypingAnimationthree />;
+      case 3:
+        return <TypingAnimationfour />;
+      default:
+        return null;
+    }
+  };
 
-      <div className="content-container" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
-        <div className="loading-text">
-          {texts[currentStep]}
+  return (
+    <div className="container-third">
+      <h1>Step-by-Step Animation</h1>
+      <p>Learn how to use our platform in just 4 simple steps</p>
+      <div className="content-wrapper">
+        <div className="steps-container">
+          {steps.map((step, index) => (
+            <div
+              key={index}
+              className={`step ${currentStep === index ? 'active' : currentStep > index ? 'dim' : ''}`}
+            >
+              {index + 1} - {step}
+            </div>
+          ))}
         </div>
 
-        <div className="animation-box" style={{ backgroundColor: 'transparent' }}>
-          <Animation1 />
+        <div className="content-container">
+          <div className="loading-text">
+            {texts[currentStep]}
+          </div>
+
+          <div className="animation-box">
+            {renderAnimation()}
+          </div>
         </div>
       </div>
     </div>

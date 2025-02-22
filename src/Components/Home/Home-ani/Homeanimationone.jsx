@@ -12,22 +12,15 @@ const TypingAnimation = () => {
     ];
 
     const diseaseNames = [
-        "Malaria",
-        "Dengue Fever",
-        "Influenza",
-        "Common Cold",
-        "Pneumonia",
-        "Chickenpox",
-        "Measles",
-        "Typhoid Fever",
-        "Tuberculosis",
-        "Cholera"
+        "Malaria", "Dengue Fever", "Influenza", "Common Cold", "Pneumonia",
+        "Chickenpox", "Measles", "Typhoid Fever", "Tuberculosis", "Cholera"
     ];
 
     const [diseaseIndex, setDiseaseIndex] = useState(0);
     const [charIndex, setCharIndex] = useState(0);
     const [searchText, setSearchText] = useState("");
     const [typingActive, setTypingActive] = useState(true);
+    const [pressedKey, setPressedKey] = useState(null);
 
     useEffect(() => {
         if (typingActive) {
@@ -49,6 +42,9 @@ const TypingAnimation = () => {
     }, [charIndex, typingActive, diseaseIndex]);
 
     const handleKeyDown = (event) => {
+        setPressedKey(event.key.toUpperCase());
+        setTimeout(() => setPressedKey(null), 200);
+
         if (event.key === "Enter") {
             setTypingActive(true);
             setSearchText("");
@@ -72,20 +68,16 @@ const TypingAnimation = () => {
     }, []);
 
     return (
-
-        <div className="key-animation">
-            <input
-                type="text"
-                value={searchText}
-                readOnly
-                className="search-bar"
-            />
-            <div className="keyboard">
-                {keyboardLayout.flat().map((key, idx) => (
-                    <div key={idx} className="key">
-                        {key}
-                    </div>
-                ))}
+        <div className="animation-container" style={{ width: '900px', height: '450px', overflow: 'hidden' }}>
+            <input type="text" value={searchText} readOnly className="search-bar" />
+            <div className="keyboard-container">
+                <div className="keyboard">
+                    {keyboardLayout.flat().map((key, idx) => (
+                        <div key={idx} className={`key ${pressedKey === key.toUpperCase() ? 'active' : ''}`}>
+                            {key}
+                        </div>
+                    ))}
+                </div>
             </div>
         </div>
     );
