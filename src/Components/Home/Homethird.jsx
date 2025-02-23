@@ -47,7 +47,7 @@ const StepByStepAnimation = () => {
 
   return (
     <div className="container-third">
-      <h1>Step-by-Step Animation</h1>
+      <h1 className="heading-Work">How It Works</h1>
       <p>Learn how to use our platform in just 4 simple steps</p>
       <div className="content-wrapper">
         <div className="steps-container">

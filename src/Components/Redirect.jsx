@@ -25,12 +25,12 @@ useEffect(() => {
 
 
   return (
-    <div className="card">
+    <div className="Redirect-card">
       <div className="circle">
         <img 
           src="cocacola_logo.png" 
           alt="Medi Track Logo" 
-          className="logo" 
+          className="Redirect-logo" 
         />
       </div>
       <div className="content">

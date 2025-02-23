@@ -23,7 +23,7 @@ const AutoDiseaseSearch = () => {
         const interval = setInterval(() => {
             setDiseaseIndex((prev) => (prev + 1) % diseaseNames.length);
             setSelectedVideoIndex(Math.floor(Math.random() * videos.length));
-        }, 5000);
+        }, 3000); // Faster transition
         return () => clearInterval(interval);
     }, []);
 
@@ -37,7 +37,7 @@ const AutoDiseaseSearch = () => {
                 {videos.map((video, index) => (
                     <div
                         key={index}
-                        className={`video ${index === selectedVideoIndex ? "selected-video" : "hidden"}`}
+                        className={`video ${index === selectedVideoIndex ? "selected-video" : "visible-video"}`}
                         style={{ backgroundColor: video.color }}
                     >
                         {video.title} <span className="tick-mark">✔</span>
@@ -49,3 +49,4 @@ const AutoDiseaseSearch = () => {
 };
 
 export default AutoDiseaseSearch;
+

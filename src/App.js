@@ -6,6 +6,7 @@ import HomePage from './Components/Home/Home';
 // import ExplorePage from './Components/Explore';
 import RedirectPage from './Components/Redirect';
 import Remedies from './Components/Remedies/Remedies';
+import ExplorePage from './Components/Explore/Explore';
 
 const ProtectedRoute = ({ children, redirectComplete }) => {
   if (!redirectComplete) {
@@ -32,7 +33,7 @@ const App = memo(() => {
         path="/explore" 
         element={
           <ProtectedRoute redirectComplete={redirectComplete}>
-            {/* <ExplorePage /> */}
+            <ExplorePage />
           </ProtectedRoute>
         } 
       />

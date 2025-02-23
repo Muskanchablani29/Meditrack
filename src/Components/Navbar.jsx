@@ -66,7 +66,7 @@ const Navbar = memo(() => {
                 </button>
             </nav>
 
-            {/* <div 
+            <div 
                 className={`nav-drawer modern ${drawerOpen ? "open" : ""}`}
                 role="dialog"
                 aria-modal="true"
@@ -128,7 +128,7 @@ const Navbar = memo(() => {
                         <span>Sign Up</span>
                     </Link>
                 </div>
-            </div> */}
+            </div>
 
             <button 
                 className="dark-mode-button floating"

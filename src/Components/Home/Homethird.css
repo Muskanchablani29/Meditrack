@@ -23,10 +23,15 @@
   align-items: center;
   flex-wrap: wrap;
 }
-
+.heading-Work{
+  font-size: 3.5rem;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+}
 .step {
   width: 250px;
-  min-height: 120px;
+  min-height: 60px;
   background: #ddd;
   display: flex;
   align-items: center;
@@ -71,7 +76,7 @@
 
 .animation-box {
   width: 1000px;
-  height: 500px;
+  height: 550px;
   border-radius: 20px;
   display: flex;
   align-items: center;
