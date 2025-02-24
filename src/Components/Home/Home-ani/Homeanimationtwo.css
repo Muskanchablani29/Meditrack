@@ -1,97 +1,200 @@
 /* styles.css */
 .container-twoanimation {
-    width: 900px;
-    height: 450px;
-    background-color: #f3f4f6;
-    padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  width: 100%; /* Changed from fixed 900px */
+  max-width: 900px;
+  height: auto; /* Changed from fixed height */
+  min-height: 450px;
+  background-color: #f3f4f6;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.search-box {
+  position: relative;
+  margin-bottom: 20px;
+  width: 100%;
+  max-width: 320px;
+}
+
+.search-input {
+  width: 100%;
+  padding: 10px;
+  font-size: 18px;
+  border: 2px solid #4a90e2;
+  border-radius: 25px;
+  outline: none;
+  text-align: center;
+  font-weight: bold;
+  text-transform: capitalize;
+  transition: all 0.3s ease;
+}
+
+.loading-text {
+  font-size: 18px;
+  color: #666;
+  margin-top: 10px;
+}
+
+.video-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 20px;
+  width: 100%;
+}
+
+.video-box {
+  width: 200px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+  opacity: 0;
+  animation: fadeIn 0.8s forwards;
+  transition: transform 0.3s ease, opacity 0.5s ease-in-out;
+}
+
+/* Media Queries */
+
+/* Tablets */
+@media screen and (max-width: 768px) {
+  .container-twoanimation {
+      padding: 15px;
+      margin: 10px;
+      min-height: 400px;
   }
-  
+
   .title {
-    font-size: 24px;
-    font-weight: bold;
-    color: #333;
-    margin-bottom: 10px;
+      font-size: 22px;
   }
-  
-  .search-box {
-    position: relative;
-    margin-bottom: 20px;
-  }
-  
+
   .search-input {
-    width: 320px;
-    padding: 10px;
-    font-size: 18px;
-    border: 2px solid #4a90e2;
-    border-radius: 25px;
-    outline: none;
-    text-align: center;
-    font-weight: bold;
-    text-transform: capitalize;
-    transition: all 0.3s ease;
+      padding: 8px;
+      font-size: 16px;
   }
-  
+
   .loading-text {
-    font-size: 18px;
-    color: #666;
-    margin-top: 10px;
+      font-size: 16px;
   }
-  
-  .video-container {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 15px;
-    margin-top: 20px;
-  }
-  
+
   .video-box {
-    width: 200px;
-    height: 120px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 16px;
-    font-weight: bold;
-    color: white;
-    border-radius: 10px;
-    cursor: pointer;
-    opacity: 0;
-    animation: fadeIn 0.8s forwards;
-    transition: transform 0.3s ease, opacity 0.5s ease-in-out;
+      width: calc(50% - 15px); /* 2 videos per row */
+      height: 100px;
+      font-size: 14px;
   }
-  
-  @keyframes fadeIn {
-    from {
+}
+
+/* Mobile phones */
+@media screen and (max-width: 480px) {
+  .container-twoanimation {
+      padding: 10px;
+      margin: 5px;
+      min-height: 350px;
+      border-radius: 8px;
+  }
+
+  .title {
+      font-size: 20px;
+      margin-bottom: 8px;
+  }
+
+  .search-box {
+      margin-bottom: 15px;
+  }
+
+  .search-input {
+      padding: 8px;
+      font-size: 14px;
+      border-radius: 20px;
+  }
+
+  .loading-text {
+      font-size: 14px;
+  }
+
+  .video-container {
+      gap: 10px;
+      margin-top: 15px;
+  }
+
+  .video-box {
+      width: 100%; /* Full width on mobile */
+      height: 90px;
+      font-size: 14px;
+      margin-bottom: 5px;
+  }
+}
+
+/* Small mobile phones */
+@media screen and (max-width: 320px) {
+  .container-twoanimation {
+      padding: 8px;
+      min-height: 300px;
+  }
+
+  .title {
+      font-size: 18px;
+  }
+
+  .search-input {
+      padding: 6px;
+      font-size: 13px;
+  }
+
+  .loading-text {
+      font-size: 13px;
+  }
+
+  .video-box {
+      height: 80px;
+      font-size: 13px;
+  }
+}
+
+/* Keep existing animations and color classes */
+@keyframes fadeIn {
+  from {
       opacity: 0;
       transform: scale(0.8);
-    }
-    to {
+  }
+  to {
       opacity: 1;
       transform: scale(1);
-    }
   }
-  
-  /* Different colors for video boxes */
-  .color-0 {
-    background: #ff4081;
-  }
-  
-  .color-1 {
-    background: #3f51b5;
-  }
-  
-  .color-2 {
-    background: #ff9800;
-  }
-  
-  .color-3 {
-    background: #4caf50;
-  }
-  
+}
+
+/* Different colors for video boxes */
+.color-0 {
+  background: #ff4081;
+}
+
+.color-1 {
+  background: #3f51b5;
+}
+
+.color-2 {
+  background: #ff9800;
+}
+
+.color-3 {
+  background: #4caf50;
+}

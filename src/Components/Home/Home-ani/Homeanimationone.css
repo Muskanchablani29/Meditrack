@@ -1,8 +1,10 @@
 /* HomeThirdAnimation.css */
 
 .animation-container {
-    width: 950px;
-    height: 450px;
+    width: 100%; /* Changed from fixed width */
+    max-width: 950px; /* Added max-width */
+    height: auto; /* Changed from fixed height */
+    min-height: 450px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -12,6 +14,7 @@
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     padding: 10px;
+    margin: 0 auto; /* Center the container */
 }
 
 .search-bar {
@@ -46,7 +49,6 @@
     justify-items: center;
 }
 
-/* Define specific key widths for realistic layout */
 .key {
     display: flex;
     align-items: center;
@@ -66,7 +68,112 @@
     text-align: center;
 }
 
-/* Adjust specific keys to be larger */
+/* Media Queries for different screen sizes */
+
+/* Large tablets and small laptops */
+@media screen and (max-width: 1024px) {
+    .animation-container {
+        max-width: 800px;
+    }
+
+    .keyboard {
+        grid-template-columns: repeat(12, 1fr);
+        gap: 4px;
+    }
+
+    .key {
+        min-width: 40px;
+        min-height: 40px;
+        font-size: 12px;
+    }
+}
+
+/* Tablets */
+@media screen and (max-width: 768px) {
+    .animation-container {
+        max-width: 600px;
+        min-height: 350px;
+    }
+
+    .keyboard {
+        grid-template-columns: repeat(10, 1fr);
+        gap: 3px;
+    }
+
+    .key {
+        min-width: 35px;
+        min-height: 35px;
+        padding: 8px;
+        font-size: 11px;
+    }
+
+    .search-bar {
+        font-size: 16px;
+        padding: 0.6rem;
+    }
+}
+
+/* Mobile phones */
+@media screen and (max-width: 480px) {
+    .animation-container {
+        max-width: 100%;
+        min-height: 300px;
+        padding: 5px;
+    }
+
+    .keyboard-container {
+        width: 98%;
+        padding: 0.5rem;
+    }
+
+    .keyboard {
+        grid-template-columns: repeat(8, 1fr);
+        gap: 2px;
+        padding: 5px;
+    }
+
+    .key {
+        min-width: 28px;
+        min-height: 28px;
+        padding: 6px;
+        font-size: 10px;
+    }
+
+    .search-bar {
+        font-size: 14px;
+        padding: 0.5rem;
+    }
+
+    /* Adjust special keys for mobile */
+    .key.space {
+        grid-column: span 3;
+        min-width: 100px;
+    }
+
+    .key.tab, .key.caps, .key.shift, .key.enter, .key.backspace {
+        grid-column: span 1;
+    }
+}
+
+/* Small mobile phones */
+@media screen and (max-width: 320px) {
+    .keyboard {
+        grid-template-columns: repeat(7, 1fr);
+    }
+
+    .key {
+        min-width: 24px;
+        min-height: 24px;
+        padding: 4px;
+        font-size: 9px;
+    }
+
+    .key.space {
+        min-width: 80px;
+    }
+}
+
+/* Keep the original special key styles and animations */
 .key.space {
     grid-column: span 5;
     min-width: 200px;
@@ -80,7 +187,6 @@
     grid-column: span 1;
 }
 
-/* Glowing effect when key is pressed */
 .key.active {
     background: linear-gradient(135deg, #4a90e2, #357abd);
     color: white;
@@ -88,7 +194,6 @@
     box-shadow: 0 0 10px rgba(74, 144, 226, 0.8);
 }
 
-/* Key press animation */
 @keyframes keyPress {
     0% { transform: translateY(0); box-shadow: 0 0 10px rgba(74, 144, 226, 0.8); }
     50% { transform: translateY(-4px); box-shadow: 0 0 20px rgba(74, 144, 226, 1); }

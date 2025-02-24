@@ -1,17 +1,17 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import { NavLink } from 'react-router-dom';
 import './Explorethree.css';
-import disease1 from '../Images/Dengue.jpg'
-import disease2 from '../Images/Influenja.jpeg'
-import disease3 from '../Images/Coronavirus.webp'
-import disease4 from '../Images/Zika.webp'
-import disease5 from '../Images/Malaria.webp'
-import disease6 from '../Images/Hepatitis.jpeg'
-import disease7 from '../Images/Measles.jpg'
-import disease8 from '../Images/Chickenpox.jpg'
+import disease1 from '../Images/Dengue.jpg';
+import disease2 from '../Images/Influenja.jpeg';
+import disease3 from '../Images/Coronavirus.webp';
+import disease4 from '../Images/Zika.webp';
+import disease5 from '../Images/Malaria.webp';
+import disease6 from '../Images/Hepatitis.jpeg';
+import disease7 from '../Images/Measles.jpg';
+import disease8 from '../Images/Chickenpox.jpg';
 
-
-const DiseaseCard = ({ frontPageClass, image, title, subtitle, shortDescription }) => (
+const DiseaseCard = ({ frontPageClass, image, title, subtitle, shortDescription, linkTo }) => (
   <div className="card">
     <div className={frontPageClass} style={{ backgroundImage: `url(${image})` }}>
       <div className="card-info">
@@ -23,6 +23,9 @@ const DiseaseCard = ({ frontPageClass, image, title, subtitle, shortDescription 
       <div className="card-content">
         <h3>{title}</h3>
         <p className="card-description">{shortDescription}</p>
+        <NavLink to={linkTo} className="explore-more-btn">
+          Explore More
+        </NavLink>
       </div>
     </div>
   </div>
@@ -34,6 +37,7 @@ DiseaseCard.propTypes = {
   title: PropTypes.string.isRequired,
   subtitle: PropTypes.string.isRequired,
   shortDescription: PropTypes.string.isRequired,
+  linkTo: PropTypes.string.isRequired,
 };
 
 const AddMoreCard = ({ onClick }) => (
@@ -67,6 +71,7 @@ const Explorethree = () => {
       title: 'Dengue',
       subtitle: 'Mosquito-borne viral infection',
       shortDescription: 'Severe flu-like illness spread by mosquitoes.',
+      linkTo: '/diseases/dengue'
     },
     {
       id: 2,
@@ -75,6 +80,7 @@ const Explorethree = () => {
       title: 'Influenza',
       subtitle: 'Seasonal flu virus',
       shortDescription: 'A contagious respiratory illness caused by influenza viruses.',
+      linkTo: '/diseases/influenza'
     },
     {
       id: 3,
@@ -83,6 +89,7 @@ const Explorethree = () => {
       title: 'COVID-19',
       subtitle: 'Coronavirus disease',
       shortDescription: 'A respiratory illness caused by SARS-CoV-2.',
+      linkTo: '/diseases/covid19'
     },
     {
       id: 4,
@@ -91,6 +98,7 @@ const Explorethree = () => {
       title: 'Zika',
       subtitle: 'Mosquito-borne virus',
       shortDescription: 'A virus that can cause birth defects.',
+      linkTo: '/diseases/zika'
     },
     {
       id: 5,
@@ -99,6 +107,7 @@ const Explorethree = () => {
       title: 'Malaria',
       subtitle: 'Life-threatening disease',
       shortDescription: 'Caused by parasites transmitted by mosquitoes.',
+      linkTo: '/diseases/malaria'
     },
     {
       id: 6,
@@ -107,6 +116,7 @@ const Explorethree = () => {
       title: 'Hepatitis',
       subtitle: 'Liver infection',
       shortDescription: 'Inflammation of the liver caused by a virus.',
+      linkTo: '/diseases/hepatitis'
     },
     {
       id: 7,
@@ -115,6 +125,7 @@ const Explorethree = () => {
       title: 'Measles',
       subtitle: 'Highly contagious virus',
       shortDescription: 'Causes a red rash and fever.',
+      linkTo: '/diseases/measles'
     },
     {
       id: 8,
@@ -123,6 +134,7 @@ const Explorethree = () => {
       title: 'Chickenpox',
       subtitle: 'Varicella-zoster virus',
       shortDescription: 'Causes an itchy rash and fever.',
+      linkTo: '/diseases/chickenpox'
     },
   ];
 
@@ -143,6 +155,7 @@ const Explorethree = () => {
         title={card.title}
         subtitle={card.subtitle}
         shortDescription={card.shortDescription}
+        linkTo={card.linkTo}
       />
     ));
 
