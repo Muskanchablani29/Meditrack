@@ -1,0 +1,118 @@
+.doctor-page {
+    padding: 40px 10%;
+    margin-top: 100px;
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+  }
+  
+  .title {
+    text-align: center;
+    font-size: 50px;
+    text-decoration: underline;
+    color: limegreen;
+    font-weight: bold;
+    margin-bottom: 40px;
+  }
+  
+  .doctor-list {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+  
+  .doctor-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: none;
+    padding: 20px 0;
+    border-bottom: 2px dashed #ddd;
+  }
+  
+  .doctor-card.reversed {
+    flex-direction: row-reverse;
+  }
+  
+  .doctor-image-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .doctor-image {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid #28a745;
+  }
+  
+  .doctor-content {
+    flex: 2;
+    padding: 0 20px;
+  }
+  
+  .doctor-name {
+    font-size: 24px;
+    font-weight: bold;
+    background: linear-gradient(45deg, #28a745, #3dbf7d);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .doctor-specialty {
+    font-size: 18px;
+    color: #555;
+    font-weight: bold;
+  }
+  
+  .doctor-description {
+    font-size: 16px;
+    color: #777;
+    margin-top: 5px;
+  }
+  
+  .button-group {
+    display: flex;
+    gap: 15px;
+    margin-top: 15px;
+  }
+  
+  .appointment-button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .whatsapp-button {
+    background-color: #25d366;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    font-size: 16px;
+  }
+  
+  .show-more-container {
+    text-align: center;
+    margin-top: 30px;
+  }
+  
+  .show-more-button {
+    background-color: #333;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  

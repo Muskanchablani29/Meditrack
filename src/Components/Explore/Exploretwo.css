@@ -55,6 +55,7 @@
     font-size: 22px;
     color: #333;
     margin: 15px 0 10px;
+    text-decoration: underline white;
     padding: 0 15px; /* Add padding for better text alignment */
 }
 
@@ -62,6 +63,7 @@
     color: #555;
     font-size: 16px;
     padding: 0 15px 20px;
+    text-decoration: underline white;
 }
 
 /* Media Queries for Responsive Design */

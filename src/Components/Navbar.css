@@ -1,258 +1,302 @@
 /* Navbar.css */
-.navbar {
+
+:root {
+    --primary-color: green;
+    --hover-bg: #e8f5e9;
+    --shadow-standard: 0 4px 8px rgba(0, 0, 0, 0.1);
+    --transition-standard: 0.3s ease;
+  }
+  
+  .navbar{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 8px 12px;
-    backdrop-filter: blur(10px);
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 12px 20px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 15px;
+    box-shadow: var(--shadow-standard);
     position: fixed;
-    top: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 95%; /* Changed from 100% */
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 95%;
     max-width: 1300px;
-    z-index: 1000;
-}
-
-.navbar.dark {
-    background: rgba(0, 0, 0, 0.3);
-    color: white;
-}
-
-.menu-button {
-    font-size: 1.5rem;
+    z-index: 1100;
+    transition: background-color var(--transition-standard);
+  }  
+  
+  .menu-button {
+    font-size: 2rem;
     background: none;
     border: none;
     cursor: pointer;
     color: inherit;
-    padding: 8px;
-}
-
-.nav-drawer {
+    padding: 10px;
+    transition: transform 0.2s ease;
+  }
+  
+  .menu-button:hover {
+    transform: scale(1.1);
+  }
+  
+  .nav-drawer {
     position: fixed;
     top: 0;
     right: -320px;
-    width: 280px;
+    width: 300px;
     height: 100%;
     background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(12px);
-    box-shadow: -3px 0 6px rgba(0, 0, 0, 0.2);
+    box-shadow: -4px 0 8px rgba(0, 0, 0, 0.2);
     transition: right 0.3s ease-in-out;
     display: flex;
     flex-direction: column;
-    padding: 25px;
-    align-items: center;
-    justify-content: center;
+    padding: 30px;
     border-radius: 10px 0 0 10px;
     z-index: 1100;
-}
-
-.nav-drawer.open {
+    will-change: transform;
+  }
+  
+  .nav-drawer.open {
     right: 0;
-}
-
-.close-button {
+  }
+  
+  .close-button {
     position: absolute;
     top: 20px;
     right: 20px;
-    font-size: 1.8rem;
+    font-size: 2rem;
     background: none;
     border: none;
     cursor: pointer;
     color: inherit;
-    padding: 8px;
-}
-
-.drawer-links {
+  }
+  
+  .drawer-links {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 20px;
+    justify-content: center;
+    margin-top: 40px;
     width: 100%;
-}
-
-.drawer-links a {
+    gap: 20px;
+  }
+  
+  .drawer-links a {
     text-decoration: none;
     color: inherit;
     padding: 15px;
     font-size: 1.5rem;
-    transition: color 0.3s ease-in-out;
+    transition: color var(--transition-standard), background-color var(--transition-standard);
     width: 100%;
     text-align: center;
-}
-
-.drawer-links a:hover {
-    color: #007bff;
-}
-
-.drawer-auth {
+    border-radius: 10px;
+  }
+  
+  .drawer-links a:hover {
+    background-color: var(--hover-bg);
+    color: var(--primary-color);
+  }
+  
+  .drawer-profile {
     margin-top: auto;
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 15px 0;
-}
-
-.auth-link {
+    padding: 20px 0;
+  }
+  
+  .profile-link {
     display: flex;
     align-items: center;
     text-decoration: none;
     color: inherit;
-    padding: 15px;
     font-size: 1.5rem;
-    transition: color 0.3s ease-in-out;
-}
-
-.auth-link:hover {
-    color: #007bff;
-}
-
-.dark-mode-button {
+    gap: 10px;
+    transition: color var(--transition-standard);
+  }
+  
+  .profile-link:hover {
+    color: var(--primary-color);
+  }
+  
+  .dark-mode-button {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    font-size: 1.6rem;
-    background: rgba(255, 255, 255, 0.15);
+    font-size: 1.8rem;
+    background: rgba(255, 255, 255, 0.2);
     border: none;
     cursor: pointer;
-    padding: 12px;
+    padding: 14px;
     border-radius: 50%;
-    backdrop-filter: blur(12px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    box-shadow: var(--shadow-standard);
     color: inherit;
-}
-
-.brand-name img {
+    transition: background-color var(--transition-standard);
+    will-change: transform;
+  }
+  
+  .dark-mode-button:hover {
+    background: rgba(0, 0, 0, 0.1);
+  }
+  
+  .brand-name img {
     height: 60px;
     width: 200px;
     object-fit: contain;
-}
-
-/* Media Queries */
-@media screen and (max-width: 768px) {
+  }
+  
+  /* Username Styling */
+  .username-button {
+    display: flex;
+    align-items: center;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.4rem;
+    padding: 10px;
+    gap: 10px;
+    transition: color var(--transition-standard);
+  }
+  
+  .username-button:hover {
+    color: var(--primary-color);
+  }
+  
+  .username-text {
+    font-weight: bold;
+    color: #333;
+  }
+  
+  /* Logout Dropdown */
+  .logout-dropdown {
+    position: absolute;
+    top: -45px;
+    right: 0;
+    background: white;
+    box-shadow: var(--shadow-standard);
+    border-radius: 5px;
+    padding: 8px 15px;
+    width: 120px;
+    text-align: center;
+  }
+  
+  .logout-button {
+    background: none;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+    color: red;
+    transition: color var(--transition-standard);
+  }
+  
+  .logout-button:hover {
+    color: darkred;
+  }
+  
+  /* Profile Link */
+  .profile-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+    font-size: 1.4rem;
+    gap: 10px;
+    transition: color var(--transition-standard);
+  }
+  
+  .profile-link:hover {
+    color: var(--primary-color);
+  }
+  
+  /* User Icon */
+  .profile-icon {
+    font-size: 1.6rem;
+  }
+  
+  /* Media Queries - Consolidated */
+  @media screen and (max-width: 768px) {
     .navbar {
-        padding: 6px 10px;
-        top: 5px;
-        width: 95%;
+      padding: 8px 12px;
     }
-
+  
     .brand-name img {
-        height: 50px;
-        width: 160px;
+      height: 50px;
+      width: 160px;
     }
-
+  
     .menu-button {
-        font-size: 1.3rem;
-        padding: 6px;
+      font-size: 1.8rem;
     }
-
+  
     .nav-drawer {
-        width: 100%; /* Full width on tablets */
-        right: -100%;
-        border-radius: 0;
+      width: 100%;
+      right: -100%;
+      border-radius: 0;
     }
-
+  
     .drawer-links a {
-        font-size: 1.3rem;
-        padding: 12px;
+      font-size: 1.3rem;
     }
-
-    .auth-link {
-        font-size: 1.3rem;
-        padding: 12px;
+  
+    .profile-link {
+      font-size: 1.3rem;
     }
-
+  
     .dark-mode-button {
-        bottom: 15px;
-        right: 15px;
-        font-size: 1.4rem;
-        padding: 10px;
+      font-size: 1.6rem;
     }
-}
-
-@media screen and (max-width: 480px) {
+  }
+  
+  @media screen and (max-width: 480px) {
     .navbar {
-        padding: 4px 8px;
-        top: 3px;
-        max-width: 94%;
+      padding: 6px 10px;
     }
-
+  
     .brand-name img {
-        height: 40px;
-        width: 130px;
+      height: 40px;
+      width: 130px;
     }
-
+  
     .menu-button {
-        font-size: 1.2rem;
-        padding: 4px;
+      font-size: 1.6rem;
     }
-
-    .nav-drawer {
-        padding: 20px;
-    }
-
-    .close-button {
-        top: 15px;
-        right: 15px;
-        font-size: 1.5rem;
-    }
-
-    .drawer-links {
-        margin-top: 15px;
-    }
-
+  
     .drawer-links a {
-        font-size: 1.1rem;
-        padding: 10px;
+      font-size: 1.1rem;
     }
-
-    .auth-link {
-        font-size: 1.1rem;
-        padding: 10px;
+  
+    .profile-link {
+      font-size: 1.1rem;
     }
-
-    .drawer-auth {
-        padding: 10px 0;
-    }
-
+  
     .dark-mode-button {
-        bottom: 12px;
-        right: 12px;
-        font-size: 1.2rem;
-        padding: 8px;
+      font-size: 1.4rem;
     }
-}
-
-@media screen and (max-width: 320px) {
+  }
+  
+  @media screen and (max-width: 320px) {
     .navbar {
-        padding: 3px 6px;
-        width: 80%;
+      padding: 4px 8px;
     }
-
+  
     .brand-name img {
-        height: 35px;
-        width: 110px;
+      height: 35px;
+      width: 110px;
     }
-
+  
     .menu-button {
-        font-size: 1.1rem;
-        padding: 3px;
+      font-size: 1.4rem;
     }
-
+  
     .drawer-links a,
-    .auth-link {
-        font-size: 1rem;
-        padding: 8px;
+    .profile-link {
+      font-size: 1rem;
     }
-
+  
     .dark-mode-button {
-        bottom: 10px;
-        right: 10px;
-        font-size: 1.1rem;
-        padding: 7px;
+      font-size: 1.2rem;
     }
-}
+  }
+  

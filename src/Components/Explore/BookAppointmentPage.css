@@ -1,0 +1,102 @@
+.book-appointment-page {
+    max-width: 700px;
+    margin: 100px auto;
+    padding: 30px;
+    background: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    position: relative;
+  }
+  
+  h1 {
+    color: #333;
+    font-size: 28px;
+  }
+  
+  h2 {
+    color: #555;
+    font-size: 24px;
+  }
+  
+  .appointment-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 30px;
+  }
+  
+  label {
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    font-size: 18px;
+  }
+  
+  input {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 18px;
+  }
+  
+  .confirm-button {
+    background: #28a745;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+  }
+  
+  .confirm-button:hover {
+    background: #218838;
+  }
+  
+  /* Added styling for new form fields */
+  input[type="tel"],
+  input[type="date"],
+  input[type="time"] {
+    width: 100%;
+    padding: 12px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 18px;
+  }
+  
+  /* Pop-up Message Styling */
+  .popup-message {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    font-size: 18px;
+    z-index: 1000;
+    width: 400px;
+    max-width: 90%;
+  }
+  
+  .popup-message button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    border: none;
+    background: #28a745;
+    color: white;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .popup-message button:hover {
+    background: #218838;
+  }
+  

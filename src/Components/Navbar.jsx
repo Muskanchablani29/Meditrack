@@ -1,55 +1,69 @@
 import React, { useState, memo, useCallback, useEffect } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import { Link, NavLink as RouterNavLink } from "react-router-dom";
+import { logout } from "../Reducers/authReducers"; // Corrected import path
 import "./Navbar.css";
 import logo from "./Images/meditrack.png";
 
+const handleEscape = (e, drawerOpen, toggleDrawer) => {
+    if (e.key === 'Escape' && drawerOpen) {
+        toggleDrawer(false);
+    }
+};
+
+const CustomNavLink = memo(({ to, onClick, children }) => (
+    <RouterNavLink 
+        to={to} 
+        onClick={onClick}
+        className={({ isActive }) => isActive ? 'active' : ''}
+    >
+        {children}
+    </RouterNavLink>
+));
+
+CustomNavLink.displayName = 'CustomNavLink';
+
 const Navbar = memo(() => {
-    const [darkMode, setDarkMode] = useState(() => 
-        document.body.classList.contains("dark-mode")
-    );
     const [drawerOpen, setDrawerOpen] = useState(false);
+    const [showLogout, setShowLogout] = useState(false);
+    
+    const dispatch = useDispatch();
+    
+    // Get authentication state from Redux
+    const user = useSelector((state) => state.auth.user); 
+    const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
 
-    // Handle drawer state and body class
     useEffect(() => {
-        if (drawerOpen) {
-            document.body.classList.add("drawer-open");
-        } else {
-            document.body.classList.remove("drawer-open");
-        }
-        
-        // Cleanup on unmount
-        return () => {
-            document.body.classList.remove("drawer-open");
-        };
+        document.body.classList.toggle("drawer-open", drawerOpen);
+        return () => document.body.classList.remove("drawer-open");
     }, [drawerOpen]);
-
-    const toggleDarkMode = useCallback(() => {
-        setDarkMode(prevMode => {
-            const newMode = !prevMode;
-            document.body.classList.toggle("dark-mode", newMode);
-            return newMode;
-        });
-    }, []);
 
     const toggleDrawer = useCallback((isOpen) => {
         setDrawerOpen(isOpen);
     }, []);
 
-    // Handle escape key to close drawer
     useEffect(() => {
-        const handleEscape = (e) => {
-            if (e.key === 'Escape' && drawerOpen) {
-                toggleDrawer(false);
-            }
-        };
-
-        window.addEventListener('keydown', handleEscape);
-        return () => window.removeEventListener('keydown', handleEscape);
+        const escapeHandler = (e) => handleEscape(e, drawerOpen, toggleDrawer);
+        window.addEventListener('keydown', escapeHandler);
+        return () => window.removeEventListener('keydown', escapeHandler);
     }, [drawerOpen, toggleDrawer]);
+
+    const handleLogout = () => {
+        dispatch(logout()); // Dispatch logout action
+        setShowLogout(false);
+        toggleDrawer(false);
+    };
+
+    const navLinks = [
+        { to: "/home", text: "Home" },
+        { to: "/explore", text: "Explore" },
+        { to: "/about", text: "About" },
+        { to: "/contact", text: "Contact" }
+    ];
 
     return (
         <>
-            <nav className={`navbar glassmorphism ${darkMode ? "dark" : ""}`}>
+            <nav className="navbar glassmorphism">
                 <div className="logo">
                     <span className="brand-name">
                         <img src={logo} alt="MediTrack Logo" loading="lazy" />
@@ -80,64 +94,44 @@ const Navbar = memo(() => {
                     ✕
                 </button>
                 <div className="drawer-links">
-                    <NavLink 
-                        to="/home" 
-                        onClick={() => toggleDrawer(false)}
-                        className={({ isActive }) => isActive ? 'active' : ''}
-                    >
-                        Home
-                    </NavLink>
-                    <NavLink 
-                        to="/explore" 
-                        onClick={() => toggleDrawer(false)}
-                        className={({ isActive }) => isActive ? 'active' : ''}
-                    >
-                        Explore
-                    </NavLink>
-                    <NavLink 
-                        to="/about" 
-                        onClick={() => toggleDrawer(false)}
-                        className={({ isActive }) => isActive ? 'active' : ''}
-                    >
-                        About
-                    </NavLink>
-                    <NavLink 
-                        to="/contact" 
-                        onClick={() => toggleDrawer(false)}
-                        className={({ isActive }) => isActive ? 'active' : ''}
-                    >
-                        Contact
-                    </NavLink>
+                    {navLinks.map(({ to, text }) => (
+                        <CustomNavLink 
+                            key={to}
+                            to={to} 
+                            onClick={() => toggleDrawer(false)}
+                        >
+                            {text}
+                        </CustomNavLink>
+                    ))}
                 </div>
 
-                <div className="drawer-auth">
-                    <Link 
-                        to="/login" 
-                        className="auth-link" 
-                        onClick={() => toggleDrawer(false)}
-                    >
-                        <span className="auth-icon" aria-hidden="true">👤</span>
-                        <span>Sign In</span>
-                    </Link>
-                    <Link 
-                        to="/register" 
-                        className="auth-link" 
-                        onClick={() => toggleDrawer(false)}
-                    >
-                        <span className="auth-icon" aria-hidden="true">➕</span>
-                        <span>Sign Up</span>
-                    </Link>
+                <div className="drawer-profile">
+                    {isLoggedIn ? (
+                        <div className="user-menu">
+                            <button 
+                                className="username-button" 
+                                onClick={() => setShowLogout(!showLogout)}
+                            >
+                                {user?.username}
+                            </button>
+                            {showLogout && (
+                                <button className="logout-button" onClick={handleLogout}>
+                                    Logout
+                                </button>
+                            )}
+                        </div>
+                    ) : (
+                        <Link 
+                            to="/SignUp" 
+                            className="profile-link" 
+                            onClick={() => toggleDrawer(false)}
+                        >
+                            <span className="profile-icon" aria-hidden="true">👤</span>
+                            <span>Profile</span>
+                        </Link>
+                    )}
                 </div>
             </div>
-
-            <button 
-                className="dark-mode-button floating"
-                onClick={toggleDarkMode}
-                aria-label={darkMode ? "Switch to light mode" : "Switch to dark mode"}
-                aria-pressed={darkMode}
-            >
-                <span aria-hidden="true">{darkMode ? "☀️" : "🌙"}</span>
-            </button>
         </>
     );
 });
