@@ -3,19 +3,18 @@ import React, { useState, memo, lazy, Suspense, useCallback } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import Navbar from './Components/Navbar';
 import RedirectPage from './Components/Redirect';
-import StoreProvider from './Store';
-import { LOGIN } from './actions/authActions';
 
 // Lazy load components
 const HomePage = lazy(() => import('./Components/Home/Home'));
 const ExplorePage = lazy(() => import('./Components/Explore/Explore'));
 const Remedies = lazy(() => import('./Components/Remedies/Remedies'));
 const SignUp = lazy(() => import('./Components/SignUp'));
-const Profile = lazy(() => import('./Components/Login'));
 const Meditation = lazy(() => import('./Components/Explore/Meditation'));
 const Consult = lazy(() => import('./Components/Explore/DoctorConsult'));
 const HomeRemedies = lazy(() => import('./Components/Explore/Homeremedies'));
 const Appointment = lazy(() => import('./Components/Explore/BookAppointmentPage'));
+const About = lazy(() => import('./Components/About/About'));
+
 
 // Loading component
 const LoadingSpinner = memo(() => (
@@ -55,12 +54,6 @@ const ROUTES = [
     exact: true
   },
   {
-    path: '/profile',
-    element: Profile,
-    label: 'Profile',
-    exact: true
-  },
-  {
     path: '/Meditation',
     element: Meditation,
     label: 'Meditation',
@@ -91,9 +84,9 @@ const ROUTES = [
     exact: true
   },
   {
-    path: '/login',
-    element: Profile,
-    label: 'Login',
+    path: '/About',
+    element: About,
+    label: 'About',
     exact: true
   }
 ];
@@ -109,6 +102,7 @@ const App = memo(() => {
   // Memoized authenticated routes
   const authenticatedRoutes = redirectComplete && (
     <>
+    
       {ROUTES.map(({ path, element: Element, exact }) => (
         <Route
           key={path}

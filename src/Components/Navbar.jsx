@@ -1,7 +1,7 @@
 import React, { useState, memo, useCallback, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Link, NavLink as RouterNavLink } from "react-router-dom";
-import { logout } from "../Reducers/authReducers"; // Corrected import path
+import { logout, deleteAccount } from "../Reducers/authReducers";
 import "./Navbar.css";
 import logo from "./Images/meditrack.png";
 
@@ -25,7 +25,7 @@ CustomNavLink.displayName = 'CustomNavLink';
 
 const Navbar = memo(() => {
     const [drawerOpen, setDrawerOpen] = useState(false);
-    const [showLogout, setShowLogout] = useState(false);
+    const [showMenu, setShowMenu] = useState(false);
     
     const dispatch = useDispatch();
     
@@ -50,8 +50,16 @@ const Navbar = memo(() => {
 
     const handleLogout = () => {
         dispatch(logout()); // Dispatch logout action
-        setShowLogout(false);
+        setShowMenu(false);
         toggleDrawer(false);
+    };
+
+    const handleDeleteAccount = () => {
+        if (window.confirm("Are you sure you want to delete your account permanently? This action cannot be undone.")) {
+            dispatch(deleteAccount());
+            setShowMenu(false);
+            toggleDrawer(false);
+        }
     };
 
     const navLinks = [
@@ -63,7 +71,7 @@ const Navbar = memo(() => {
 
     return (
         <>
-            <nav className="navbar glassmorphism">
+            <nav className="navbartop glassmorphism">
                 <div className="logo">
                     <span className="brand-name">
                         <img src={logo} alt="MediTrack Logo" loading="lazy" />
@@ -110,14 +118,30 @@ const Navbar = memo(() => {
                         <div className="user-menu">
                             <button 
                                 className="username-button" 
-                                onClick={() => setShowLogout(!showLogout)}
+                                onClick={() => setShowMenu(!showMenu)}
                             >
-                                {user?.username}
+                                <span className="profile-icon" aria-hidden="true">👤</span>
+                                {user?.username || "User"}
                             </button>
-                            {showLogout && (
-                                <button className="logout-button" onClick={handleLogout}>
-                                    Logout
-                                </button>
+                            {showMenu && (
+                                <div className="user-dropdown">
+                                    <Link 
+                                        to="/profile" 
+                                        className="profile-option"
+                                        onClick={() => {
+                                            setShowMenu(false);
+                                            toggleDrawer(false);
+                                        }}
+                                    >
+                                        My Profile
+                                    </Link>
+                                    <button className="logout-button" onClick={handleLogout}>
+                                        Logout
+                                    </button>
+                                    <button className="delete-account-button" onClick={handleDeleteAccount}>
+                                        Delete Account
+                                    </button>
+                                </div>
                             )}
                         </div>
                     ) : (

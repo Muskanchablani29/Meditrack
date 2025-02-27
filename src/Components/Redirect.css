@@ -1,106 +1,39 @@
+/* Redirect.css */
+.Redirect-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    background: #fff;
+    overflow: hidden;
+    position: relative;
+}
 
-.Redirect-card {
-    position: relative;
-    width: 350px;
-    height: 350px;
-    border-radius: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    animation: expand 3s forwards ease-in-out;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-}
-@keyframes expand {
-    0% { width: 350px; }
-    100% { width: 600px; }
-}
-.circle {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    border-radius: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.circle::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 350px;
-    height: 350px;
-    border-radius: 50%;
-    border: 8px solid #f40103;
-    background: rgba(25, 25, 25, 0.9);
-    filter: drop-shadow(0 0 10px #f40103) drop-shadow(0 0 60px #f40103);
-    animation: backgroundExpand 3s forwards ease-in-out;
-}
-@keyframes backgroundExpand {
-    0% { width: 350px; height: 350px; }
-    100% { width: 100%; height: 100%; border-radius: 20px; background: #f40103; }
-}
 .Redirect-logo {
-    position: relative;
-    width: 250px;
-    animation: shrinkLogo 3s forwards;
-}
-@keyframes shrinkLogo {
-    0% { transform: scale(1); opacity: 1; }
-    100% { transform: scale(0); opacity: 0; }
-}
-.product_img {
+    width: 700px; /* Increased size */
+    opacity: 0;
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%) scale(0) rotate(315deg);
-    height: 300px;
-    animation: showProduct 3s forwards ease-in-out;
+    transform: translate(-50%, -50%);
+    animation: fadeIn 3s forwards ease-in-out, fadeDown 2s 3s forwards ease-in-out;
 }
-@keyframes showProduct {
-    0% { transform: translate(-50%, -50%) scale(0) rotate(315deg); }
-    100% { transform: translate(-50%, -50%) scale(1) rotate(15deg); top: 45%; left: 75%; height: 500px; }
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
-.content {
-    position: absolute;
-    width: 50%;
-    left: 20%;
-    padding: 20px 20px 20px 40px;
-    opacity: 0;
-    visibility: hidden;
-    animation: showContent 3s forwards ease-in-out;
-    color: white;
-}
-@keyframes showContent {
-    0% { opacity: 0; visibility: hidden; left: 20%; }
-    100% { opacity: 1; visibility: visible; left: 0; }
-}
-.content h2 {
-    color: #fff;
-    text-transform: uppercase;
-    font-size: 2.5em;
-    line-height: 1em;
-    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
-}
-.content p {
-    color: #fff;
-}
-.content a {
-    position: relative;
-    color: #fff;
-    background: linear-gradient(135deg, #ff416c, #ff4b2b);
-    padding: 12px 24px;
-    border-radius: 10px;
-    display: inline-block;
-    text-decoration: none;
-    font-weight: 600;
-    margin-top: 10px;
-    transition: 0.3s;
-    box-shadow: 0 5px 15px rgba(255, 72, 0, 0.5);
-}
-.content a:hover {
-    background: linear-gradient(135deg, #ff4b2b, #ff416c);
-    transform: scale(1.1);
+
+@keyframes fadeDown {
+    0% {
+        transform: translate(-50%, -50%);
+    }
+    100% {
+        transform: translate(-50%, -40%);
+    }
 }
