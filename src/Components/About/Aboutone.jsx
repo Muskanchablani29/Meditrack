@@ -1,5 +1,6 @@
 import React from 'react';
 import './Aboutone.css';
+import image1 from '../Images/About.jpeg'
 
 export default function About() {
     return (
@@ -28,7 +29,7 @@ export default function About() {
                     </ul>
                 </div>
                 <div className="about-con-right">
-                    <div className="wrapper"></div>
+                    <div className="wrapper"><img src={image1} alt="" /></div>
                 </div>
             </div>
             

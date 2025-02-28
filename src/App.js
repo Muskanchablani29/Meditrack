@@ -14,7 +14,8 @@ const Consult = lazy(() => import('./Components/Explore/DoctorConsult'));
 const HomeRemedies = lazy(() => import('./Components/Explore/Homeremedies'));
 const Appointment = lazy(() => import('./Components/Explore/BookAppointmentPage'));
 const About = lazy(() => import('./Components/About/About'));
-
+const Footer = lazy(() => import('./Components/Footer'));
+const Contact = lazy(() => import('./Components/Contact'));
 
 // Loading component
 const LoadingSpinner = memo(() => (
@@ -35,60 +36,16 @@ const ProtectedRoute = memo(({ children, redirectComplete }) => {
 
 // Route configuration
 const ROUTES = [
-  {
-    path: '/home',
-    element: HomePage,
-    label: 'Home',
-    exact: true
-  },
-  {
-    path: '/explore',
-    element: ExplorePage,
-    label: 'Explore',
-    exact: true
-  },
-  {
-    path: '/Remedies',
-    element: Remedies,
-    label: 'Remedies',
-    exact: true
-  },
-  {
-    path: '/Meditation',
-    element: Meditation,
-    label: 'Meditation',
-    exact: true
-  },
-  {
-    path: '/Consult',
-    element: Consult,
-    label: 'Consult',
-    exact: true
-  },
-  {
-    path: '/Homeremedies',
-    element: HomeRemedies,
-    label: 'Home Remedies',
-    exact: true
-  },
-  {
-    path: '/Appointment/:doctorName',
-    element: Appointment,
-    label: 'Appointment',
-    exact: true
-  },
-  {
-    path: '/signup',
-    element: SignUp,
-    label: 'Sign Up',
-    exact: true
-  },
-  {
-    path: '/About',
-    element: About,
-    label: 'About',
-    exact: true
-  }
+  { path: '/home', element: HomePage, exact: true },
+  { path: '/explore', element: ExplorePage, exact: true },
+  { path: '/Remedies', element: Remedies, exact: true },
+  { path: '/Meditation', element: Meditation, exact: true },
+  { path: '/Consult', element: Consult, exact: true },
+  { path: '/Homeremedies', element: HomeRemedies, exact: true },
+  { path: '/Appointment/:doctorName', element: Appointment, exact: true },
+  { path: '/signup', element: SignUp, exact: true },
+  { path: '/About', element: About, exact: true },
+  { path: '/Contact', element: Contact, exact: true }
 ];
 
 const App = memo(() => {
@@ -98,27 +55,6 @@ const App = memo(() => {
   const handleRedirectComplete = useCallback((value) => {
     setRedirectComplete(value);
   }, []);
-
-  // Memoized authenticated routes
-  const authenticatedRoutes = redirectComplete && (
-    <>
-    
-      {ROUTES.map(({ path, element: Element, exact }) => (
-        <Route
-          key={path}
-          path={path}
-          exact={exact}
-          element={
-            <ProtectedRoute redirectComplete={redirectComplete}>
-              <Suspense fallback={<LoadingSpinner />}>
-                <Element />
-              </Suspense>
-            </ProtectedRoute>
-          }
-        />
-      ))}
-    </>
-  );
 
   return (
     <Router>
@@ -138,7 +74,20 @@ const App = memo(() => {
           } 
         />
         
-        {authenticatedRoutes}
+        {redirectComplete && ROUTES.map(({ path, element: Element, exact }) => (
+          <Route
+            key={path}
+            path={path}
+            exact={exact}
+            element={
+              <ProtectedRoute redirectComplete={redirectComplete}>
+                <Suspense fallback={<LoadingSpinner />}>
+                  <Element />
+                </Suspense>
+              </ProtectedRoute>
+            }
+          />
+        ))}
         
         <Route 
           path="*" 
@@ -147,6 +96,12 @@ const App = memo(() => {
           } 
         />
       </Routes>
+      
+      {redirectComplete && (
+        <Suspense fallback={<LoadingSpinner />}>
+          <Footer />
+        </Suspense>
+      )}
     </Router>
   );
 });

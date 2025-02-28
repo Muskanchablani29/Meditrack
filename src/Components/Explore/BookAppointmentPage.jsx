@@ -24,7 +24,7 @@ export default function BookAppointmentPage() {
     setTimeout(() => {
       setShowPopup(false);
       navigate("/Consult");
-    }, 2000);
+    }, 5000);
   };
 
   return (

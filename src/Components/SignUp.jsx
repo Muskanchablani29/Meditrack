@@ -4,6 +4,9 @@ import { signup, login } from '../Reducers/authReducers';
 import { useNavigate } from 'react-router-dom';
 import "./SignUp.css";
 import image1 from './Images/meditrack.png';
+import image2 from './Images/meditation.jpeg';
+import image3 from './Images/homeremdies.jpeg';
+import image4 from './Images/Doctorconsult.jpg';
 
 const Signup = () => {
   const [username, setUsername] = useState('');
@@ -226,17 +229,17 @@ const Signup = () => {
           <div className="carousel">
             <div className="images-wrapper">
               <img 
-                src="./img/WhatsApp Image 2025-02-25 at 1.05.19 PM.jpeg" 
+                src={image2}
                 className={`image img-1 ${activeImageIndex === 1 ? 'show' : ''}`} 
                 alt="" 
               />
               <img 
-                src="./img/WhatsApp Image 2025-02-25 at 1.05.37 PM.jpeg" 
+                src={image3}
                 className={`image img-2 ${activeImageIndex === 2 ? 'show' : ''}`} 
                 alt="" 
               />
               <img 
-                src="./img/WhatsApp Image 2025-02-25 at 1.05.47 PM.jpeg" 
+                src={image4} 
                 className={`image img-3 ${activeImageIndex === 3 ? 'show' : ''}`} 
                 alt="" 
               />
@@ -245,9 +248,8 @@ const Signup = () => {
             <div className="text-slider">
               <div className="text-wrap">
                 <div className="text-group" style={{ transform: `translateY(${-(activeImageIndex - 1) * 2.2}rem)` }}>
-                  <h2>Meditation help to Cure your Disease faster</h2>
-                  <h2>Customize as you like</h2>
-                  <h2>Invite students to your class</h2>
+                  <h2>Meditation help to Cure your Disease</h2>
+                  <h2>Home Remedies</h2>
                 </div>
               </div>
 

@@ -76,6 +76,12 @@
     border-radius: 10px;
 }
 
+.wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
 /* Mission Section */
 .about-mission {
     margin-top: 50px;
@@ -112,7 +118,7 @@
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-left: 5px solid #2e7d32;
+    border-left: 5px solid #3ac140;
 }
 
 .feature-card h3 {
@@ -129,7 +135,7 @@
 }
 
 .stat-item {
-    background: #2e7d32;
+    background: #4ecd55;
     color: #ffffff;
     padding: 20px;
     border-radius: 10px;

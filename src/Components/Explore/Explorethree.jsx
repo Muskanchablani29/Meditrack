@@ -169,7 +169,7 @@ const Explorethree = () => {
   };
 
   return (
-    <div className="wrapper">
+    <div className="wrapper-cards">
       <h1>Explore More About Common Viral Diseases</h1>
       <div className="Card-wrapper">{renderCards()}</div>
     </div>

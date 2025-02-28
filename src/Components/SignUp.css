@@ -15,7 +15,7 @@ input {
 
 main {
   width: 100%;
-  min-height: 100vh;
+  min-height: 110vh;
   overflow: hidden;
   background-color: #000000;
   padding: 2rem;
@@ -28,7 +28,7 @@ main {
   position: relative;
   width: 100%;
   max-width: 1020px;
-  height: 640px;
+  height: 550px;
   background-color: #fff;
   border-radius: 3.3rem;
   box-shadow: 0 60px 40px -30px rgba(0, 0, 0, 0.27);

@@ -119,11 +119,13 @@
 import React from 'react'
 import Aboutone from './Aboutone'
 import Abouttwo from './Abouttwo'
+import Aboutthree from './Aboutthree'
 export default function About() {
   return (
     <>
     <Aboutone/>
     <Abouttwo/>
+    <Aboutthree/>
     </>
   )
 }
