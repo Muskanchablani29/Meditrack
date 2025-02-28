@@ -407,6 +407,674 @@ export const diseaseData = {
       ],
       overview: "Malaria is a life-threatening disease caused by Plasmodium parasites, which are transmitted to humans through the bites of infected female Anopheles mosquitoes. Symptoms include fever, chills, headache, muscle pain, and fatigue. Severe cases can lead to complications such as organ failure or death. Prevention involves avoiding mosquito bites and taking antimalarial medications, while treatment includes specific antimalarial drugs."
     },
+    "Dengue":{
+      doctors: [
+        { name: 'Dr. Emily Johnson', specialty: 'Cardiologist', image: lady4, rating: 4, experience: '8 years', hospital: 'General Hospital', contact: '+1-555-123-4567' },
+        { name: 'Dr. Michael Brown', specialty: 'Blood Pressure Expert', image: man5, rating: 5, experience: '12 years', hospital: 'City Medical Center', contact: '+1-555-987-6543' }
+      ],
+      remedies: [
+        {
+          title: 'Rest and hydration',
+          description: 'Get plenty of rest and drink plenty of water to help your body fight the infection.',
+          difficulty: 'Easy',
+          effectiveness: 'High'
+        }
+        ,
+        {
+          title: 'Stay hydrated',
+          description: 'Drink plenty of water throughout the day to stay hydrated.',
+          difficulty: 'Easy',
+          effectiveness: 'High'
+        },
+        {
+          title: 'Wash your hands frequently',
+          description: 'Wash your hands thoroughly with soap and water or use hand sanitizer.',
+          difficulty: 'Easy',
+          effectiveness: 'High'
+        },
+        {
+          title: 'Avoid close contact with sick individuals',
+          description: 'Avoid close contact with sick individuals to reduce the risk of dengue transmission.',
+          difficulty: 'Medium',
+          effectiveness: 'High'
+        },
+        {
+          title: 'Practice good hygiene',
+          description: 'Cover your mouth when coughing or sneezing and wash your hands regularly.',
+          difficulty: 'Easy',
+          effectiveness: 'High'
+        }
+      ],
+      videos: [
+        { title: 'Dengue Fever Guide', embedUrl: '', duration: 360, ageGroup: 'adults' },
+        { title: 'Dengue Remedy', embedUrl: '', duration: 420, ageGroup: 'adults' },
+        { title: 'Dengue Prevention', embedUrl: '', duration: 480, ageGroup: 'seniors' },
+        { title: 'Dengue Awareness', embedUrl: '', duration: 300, ageGroup: 'children' },
+        { title: 'Dengue Treatment', embedUrl: '', duration: 540, ageGroup: 'adults' }
+      ],
+      overview: "Dengue fever is a viral infection caused by dengue virus. It spreads through the air when an infected person coughs, sneezes, or talks. Dengue fever is preventable and curable. Symptoms include high fever, headache, muscle and joint pain, nausea, vomiting, and diarrhea. Treatment typically involves rest, fluids, and antibiotics."
+    },
+    "Typhoid": {
+      doctors: [
+        { name: 'Dr. Emily Johnson', specialty: 'Cardiologist', image: lady4, rating: 4, experience: '8 years', hospital: 'General Hospital', contact: '+1-555-123-4567'},
+        { name: 'Dr. Michael Brown', specialty: 'Blood Pressure Expert', image: man5, rating: 5, experience: '12 years', hospital: 'City Medical Center', contact: '+00000000000000' }
+        ],
+      remedies: [
+        {
+          title: 'Rest and hydration',
+          description: 'Get plenty of rest and drink plenty of water to help your body fight the infection.',
+          difficulty: 'Easy',
+          effectiveness: 'High'
+        },
+        {
+          title: 'Stay hydrated',
+          description: 'Drink plenty of water throughout the day to stay hydrated.',
+          difficulty: 'Easy',
+          effectiveness: 'High'
+        },
+        {
+          title: 'Wash your hands frequently',
+          description: 'Wash your hands thoroughly with soap and water or use hand sanitizer.',
+          difficulty: 'Easy',
+          effectiveness: 'High'
+        },
+        {
+          title: 'Avoid close contact with sick individuals',
+          description: 'Avoid close contact with sick individuals to reduce the risk of typhoid fever transmission.',
+          difficulty: 'Medium',
+          effectiveness: 'High'
+        },
+        {
+          title: 'Practice good hygiene',
+          description: 'Cover your mouth when coughing or sneezing and wash your hands regularly.',
+          difficulty: 'Easy',
+          effectiveness: 'High'
+        }
+      ],
+      videos: [
+        { title: 'Typhoid Fever Guide', embedUrl: '', duration: 360, ageGroup: 'adults' },
+        { title: 'Typhoid Remedy', embedUrl: '', duration: 420, ageGroup: 'adults' },
+        { title: 'Typhoid Prevention', embedUrl: '', duration: 480, ageGroup: 'seniors' },
+        { title: 'Typhoid Awareness', embedUrl: '', duration: 300, ageGroup: 'children' },
+        { title: 'Typhoid Treatment', embedUrl: '', duration: 540, ageGroup: 'adults' }
+      ]
+    },
+    "cold_and_cough": {
+  "doctors": [
+    { 
+      "name": "Dr. Neha Sharma", 
+      "specialty": "Pulmonologist", 
+      "image": "lady1", 
+      "rating": 5, 
+      "experience": "10 years", 
+      "hospital": "Fortis Hospital, Delhi", 
+      "contact": "+91-555-777-8888" 
+    },
+    { 
+      "name": "Dr. Rajesh Kapoor", 
+      "specialty": "General Physician", 
+      "image": "man2", 
+      "rating": 4, 
+      "experience": "15 years", 
+      "hospital": "Apollo Hospitals, Mumbai", 
+      "contact": "+91-555-444-6666" 
+    },
+    { 
+      "name": "Dr. Priya Nair", 
+      "specialty": "ENT Specialist", 
+      "image": "lady3", 
+      "rating": 4, 
+      "experience": "12 years", 
+      "hospital": "Aster CMI Hospital, Bangalore", 
+      "contact": "+91-555-222-3333" 
+    }
+  ],
+  "remedies": [
+    { 
+      "title": "Steam Inhalation",
+      "description": "Inhale steam from a bowl of hot water to relieve nasal congestion and soothe the throat.",
+      "difficulty": "Easy",
+      "effectiveness": "High"
+    },
+    { 
+      "title": "Honey and Warm Water",
+      "description": "Mix a teaspoon of honey in warm water or tea to soothe a sore throat and suppress coughing.",
+      "difficulty": "Easy",
+      "effectiveness": "Medium"
+    },
+    { 
+      "title": "Saltwater Gargle",
+      "description": "Gargle with warm salt water to reduce throat irritation and kill bacteria.",
+      "difficulty": "Easy",
+      "effectiveness": "High"
+    },
+    { 
+      "title": "Herbal Teas",
+      "description": "Drink teas made with ginger, tulsi, or chamomile to reduce inflammation and boost immunity.",
+      "difficulty": "Easy",
+      "effectiveness": "Medium"
+    },
+    { 
+      "title": "Stay Hydrated",
+      "description": "Drink plenty of fluids like water, soups, and juices to stay hydrated and thin mucus.",
+      "difficulty": "Easy",
+      "effectiveness": "High"
+    }
+  ],
+  "videos": [
+    { 
+      "title": "Understanding Cold and Cough", 
+      "embedUrl": "https://www.youtube.com/embed/example1", 
+      "duration": 600, 
+      "ageGroup": "adults" 
+    },
+    { 
+      "title": "Home Remedies for Cough", 
+      "embedUrl": "https://www.youtube.com/embed/example2", 
+      "duration": 480, 
+      "ageGroup": "adults" 
+    },
+    { 
+      "title": "Cold Prevention Tips", 
+      "embedUrl": "https://www.youtube.com/embed/example3", 
+      "duration": 540, 
+      "ageGroup": "adults" 
+    },
+    { 
+      "title": "Cough Awareness for Children", 
+      "embedUrl": "https://www.youtube.com/embed/example4", 
+      "duration": 420, 
+      "ageGroup": "children" 
+    },
+    { 
+      "title": "Treating Cold and Cough", 
+      "embedUrl": "https://www.youtube.com/embed/example5", 
+      "duration": 480, 
+      "ageGroup": "adults" 
+    }
+  ],
+  "overview": "Cold and cough are common respiratory conditions caused by viral infections. Symptoms include a runny nose, sore throat, coughing, sneezing, and mild fever. While there is no cure, symptoms can be managed with home remedies, hydration, and over-the-counter medications. Preventive measures include maintaining hygiene, avoiding close contact with infected individuals, and boosting immunity through a healthy diet."
+},
+"migraine": {
+  "doctors": [
+    { 
+      "name": "Dr. Anjali Mehta", 
+      "specialty": "Neurologist", 
+      "image": "lady7", 
+      "rating": 5, 
+      "experience": "20 years", 
+      "hospital": "AIIMS, Delhi", 
+      "contact": "+91-555-999-8888" 
+    },
+    { 
+      "name": "Dr. Karan Malhotra", 
+      "specialty": "Headache Specialist", 
+      "image": "man8", 
+      "rating": 4, 
+      "experience": "15 years", 
+      "hospital": "Narayana Health, Bangalore", 
+      "contact": "+91-555-666-7777" 
+    },
+    { 
+      "name": "Dr. Priya Desai", 
+      "specialty": "Pain Management Specialist", 
+      "image": "lady9", 
+      "rating": 4, 
+      "experience": "12 years", 
+      "hospital": "Kokilaben Dhirubhai Ambani Hospital, Mumbai", 
+      "contact": "+91-555-444-5555" 
+    }
+  ],
+  "remedies": [
+    { 
+      "title": "Stress Management",
+      "description": "Practice relaxation techniques like yoga, meditation, or deep breathing to reduce stress, a common migraine trigger.",
+      "difficulty": "Medium",
+      "effectiveness": "High"
+    },
+    { 
+      "title": "Cold Compress",
+      "description": "Apply a cold compress or ice pack to the forehead to numb the pain and reduce inflammation.",
+      "difficulty": "Easy",
+      "effectiveness": "Medium"
+    },
+    { 
+      "title": "Hydration",
+      "description": "Drink plenty of water to stay hydrated, as dehydration can trigger migraines.",
+      "difficulty": "Easy",
+      "effectiveness": "High"
+    },
+    { 
+      "title": "Caffeine",
+      "description": "Consume a small amount of caffeine, which can help alleviate migraine pain in its early stages.",
+      "difficulty": "Easy",
+      "effectiveness": "Medium"
+    },
+    { 
+      "title": "Regular Sleep Schedule",
+      "description": "Maintain a consistent sleep routine to prevent migraines caused by irregular sleep patterns.",
+      "difficulty": "Medium",
+      "effectiveness": "High"
+    }
+  ],
+  "videos": [
+    { 
+      "title": "Understanding Migraines", 
+      "embedUrl": "https://www.youtube.com/embed/example1", 
+      "duration": 600, 
+      "ageGroup": "adults" 
+    },
+    { 
+      "title": "Migraine Triggers and Prevention", 
+      "embedUrl": "https://www.youtube.com/embed/example2", 
+      "duration": 480, 
+      "ageGroup": "adults" 
+    },
+    { 
+      "title": "Managing Migraine Pain", 
+      "embedUrl": "https://www.youtube.com/embed/example3", 
+      "duration": 540, 
+      "ageGroup": "adults" 
+    },
+    { 
+      "title": "Migraine Awareness for Children", 
+      "embedUrl": "https://www.youtube.com/embed/example4", 
+      "duration": 420, 
+      "ageGroup": "children" 
+    },
+    { 
+      "title": "Treatment Options for Migraines", 
+      "embedUrl": "https://www.youtube.com/embed/example5", 
+      "duration": 480, 
+      "ageGroup": "adults" 
+    }
+  ],
+  "overview": "Migraine is a neurological condition characterized by intense, throbbing headaches often accompanied by nausea, sensitivity to light and sound, and visual disturbances. Triggers include stress, hormonal changes, certain foods, and irregular sleep patterns. While there is no cure, migraines can be managed through lifestyle changes, medications, and preventive measures."
+},
+  "cancer": {
+  "doctors": [
+    { 
+      "name": "Dr. Sunita Reddy", 
+      "specialty": "Medical Oncologist", 
+      "image": "lady12", 
+      "rating": 5, 
+      "experience": "22 years", 
+      "hospital": "Max Super Speciality Hospital, Delhi", 
+      "contact": "+91-555-777-8888" 
+    },
+    { 
+      "name": "Dr. Vijay Kumar", 
+      "specialty": "Hematologist-Oncologist", 
+      "image": "man13", 
+      "rating": 5, 
+      "experience": "18 years", 
+      "hospital": "Fortis Hospital, Bangalore", 
+      "contact": "+91-555-999-6666" 
+    },
+    { 
+      "name": "Dr. Anusha Iyer", 
+      "specialty": "Pediatric Oncologist", 
+      "image": "lady13", 
+      "rating": 4, 
+      "experience": "15 years", 
+      "hospital": "Apollo Hospitals, Chennai", 
+      "contact": "+91-555-555-4444" 
+    },
+    { 
+      "name": "Dr. Ravi Tandon", 
+      "specialty": "Surgical Oncologist", 
+      "image": "man14", 
+      "rating": 4, 
+      "experience": "20 years", 
+      "hospital": "Kokilaben Dhirubhai Ambani Hospital, Mumbai", 
+      "contact": "+91-555-222-1111" 
+    }
+  ],
+  "remedies": [
+    { 
+      "title": "Green Tea",
+      "description": "Rich in antioxidants, drinking green tea may help fight free radicals and support overall immunity.",
+      "difficulty": "Easy",
+      "effectiveness": "Medium"
+    },
+    { 
+      "title": "Ginger Tea",
+      "description": "Ginger helps alleviate nausea often caused by chemotherapy and boosts digestion.",
+      "difficulty": "Easy",
+      "effectiveness": "Medium"
+    },
+    { 
+      "title": "Exercise and Yoga",
+      "description": "Moderate physical activity or yoga can reduce fatigue and improve emotional well-being.",
+      "difficulty": "Medium",
+      "effectiveness": "High"
+    },
+    { 
+      "title": "Turmeric",
+      "description": "Include turmeric in your diet, as it contains curcumin, which has anti-inflammatory properties.",
+      "difficulty": "Easy",
+      "effectiveness": "Medium"
+    },
+    { 
+      "title": "Fresh Fruits and Vegetables",
+      "description": "Consume a diet rich in fruits and vegetables for essential nutrients that strengthen the immune system.",
+      "difficulty": "Easy",
+      "effectiveness": "High"
+    },
+    { 
+      "title": "Vitamin D",
+      "description": "Spend time in sunlight or take supplements to maintain healthy levels of Vitamin D, which supports cell regulation.",
+      "difficulty": "Easy",
+      "effectiveness": "Medium"
+    }
+  ],
+  "videos": [
+    { 
+      "title": "How to Support a Loved One with Cancer", 
+      "embedUrl": "https://www.youtube.com/embed/example6", 
+      "duration": 600, 
+      "ageGroup": "adults" 
+    },
+    { 
+      "title": "Nutritional Tips for Cancer Patients", 
+      "embedUrl": "https://www.youtube.com/embed/example7", 
+      "duration": 480, 
+      "ageGroup": "adults" 
+    },
+    { 
+      "title": "Introduction to Palliative Care", 
+      "embedUrl": "https://www.youtube.com/embed/example8", 
+      "duration": 540, 
+      "ageGroup": "adults" 
+    },
+    { 
+      "title": "Children’s Guide to Understanding Cancer", 
+      "embedUrl": "https://www.youtube.com/embed/example9", 
+      "duration": 480, 
+      "ageGroup": "children" 
+    },
+    { 
+      "title": "Success Stories of Cancer Survivors", 
+      "embedUrl": "https://www.youtube.com/embed/example10", 
+      "duration": 600, 
+      "ageGroup": "adults" 
+    }
+  ],
+  "overview": "Cancer is a diverse group of diseases characterized by abnormal cell growth that can invade or spread to other parts of the body. Common treatments include surgery, chemotherapy, and radiation. Emerging therapies, like immunotherapy and precision medicine, offer promising advancements. Early detection and preventive measures, including screenings and lifestyle adjustments, play a vital role in managing the disease effectively.",
+  "additional_content": {
+    "prevention_strategies": [
+      "Eat a balanced, low-sugar diet.",
+      "Avoid exposure to harmful chemicals and toxins.",
+      "Stay physically active and maintain a healthy weight.",
+      "Undergo regular medical check-ups and cancer screenings."
+    ],
+    "recent_advancements": [
+      "Gene-editing technologies like CRISPR.",
+      "Tumor organoid models for personalized treatment.",
+      "AI-based algorithms for early diagnosis."
+    ],
+    "support_resources": [
+      "Access to nutritional counselors for diet planning.",
+      "Mental health support for coping with emotional challenges."
+    ]
+  }
+},
+  "coronavirus": {
+  "doctors": [
+    { 
+      "name": "Dr. Anil Mathur", 
+      "specialty": "Infectious Disease Specialist", 
+      "image": "man15", 
+      "rating": 5, 
+      "experience": "20 years", 
+      "hospital": "AIIMS, Delhi", 
+      "contact": "+91-555-111-2222" 
+    },
+    { 
+      "name": "Dr. Sneha Kapoor", 
+      "specialty": "Pulmonologist", 
+      "image": "lady16", 
+      "rating": 5, 
+      "experience": "18 years", 
+      "hospital": "Fortis Hospital, Mumbai", 
+      "contact": "+91-555-333-4444" 
+    },
+    { 
+      "name": "Dr. Rajiv Nair", 
+      "specialty": "Critical Care Specialist", 
+      "image": "man17", 
+      "rating": 4, 
+      "experience": "15 years", 
+      "hospital": "Apollo Hospitals, Bangalore", 
+      "contact": "+91-555-555-6666" 
+    },
+    { 
+      "name": "Dr. Priya Sharma", 
+      "specialty": "Virologist", 
+      "image": "lady17", 
+      "rating": 4, 
+      "experience": "12 years", 
+      "hospital": "Kokilaben Dhirubhai Ambani Hospital, Mumbai", 
+      "contact": "+91-555-777-8888" 
+    }
+  ],
+  "remedies": [
+    { 
+      "title": "Steam Inhalation",
+      "description": "Inhale steam to relieve nasal congestion and soothe respiratory passages.",
+      "difficulty": "Easy",
+      "effectiveness": "Medium"
+    },
+    { 
+      "title": "Hydration",
+      "description": "Drink plenty of fluids like water, herbal teas, and soups to stay hydrated and support recovery.",
+      "difficulty": "Easy",
+      "effectiveness": "High"
+    },
+    { 
+      "title": "Vitamin C and Zinc",
+      "description": "Consume foods rich in Vitamin C and Zinc or take supplements to boost immunity.",
+      "difficulty": "Easy",
+      "effectiveness": "Medium"
+    },
+    { 
+      "title": "Rest and Isolation",
+      "description": "Get adequate rest and self-isolate to prevent the spread of the virus.",
+      "difficulty": "Easy",
+      "effectiveness": "High"
+    },
+    { 
+      "title": "Ginger and Honey",
+      "description": "Mix ginger and honey in warm water to soothe the throat and reduce coughing.",
+      "difficulty": "Easy",
+      "effectiveness": "Medium"
+    },
+    { 
+      "title": "Breathing Exercises",
+      "description": "Practice deep breathing or pranayama to improve lung function and reduce stress.",
+      "difficulty": "Medium",
+      "effectiveness": "High"
+    }
+  ],
+  "videos": [
+    { 
+      "title": "Understanding COVID-19 Symptoms and Prevention", 
+      "embedUrl": "https://www.youtube.com/embed/example1", 
+      "duration": 600, 
+      "ageGroup": "adults" 
+    },
+    { 
+      "title": "How to Use Masks Effectively", 
+      "embedUrl": "https://www.youtube.com/embed/example2", 
+      "duration": 480, 
+      "ageGroup": "adults" 
+    },
+    { 
+      "title": "Home Care for COVID-19 Patients", 
+      "embedUrl": "https://www.youtube.com/embed/example3", 
+      "duration": 540, 
+      "ageGroup": "adults" 
+    },
+    { 
+      "title": "COVID-19 Awareness for Children", 
+      "embedUrl": "https://www.youtube.com/embed/example4", 
+      "duration": 420, 
+      "ageGroup": "children" 
+    },
+    { 
+      "title": "Vaccination and Its Importance", 
+      "embedUrl": "https://www.youtube.com/embed/example5", 
+      "duration": 600, 
+      "ageGroup": "adults" 
+    },
+    { 
+      "title": "Mental Health During the Pandemic", 
+      "embedUrl": "https://www.youtube.com/embed/example6", 
+      "duration": 480, 
+      "ageGroup": "adults" 
+    }
+  ],
+  "overview": "Coronavirus disease (COVID-19) is caused by the SARS-CoV-2 virus. It primarily affects the respiratory system, with symptoms ranging from mild (fever, cough, fatigue) to severe (difficulty breathing, organ failure). Preventive measures include wearing masks, maintaining social distance, and getting vaccinated. Treatment focuses on symptom management and supportive care.",
+  "additional_content": {
+    "prevention_strategies": [
+      "Wear a properly fitted mask in crowded or enclosed spaces.",
+      "Wash hands frequently with soap and water or use hand sanitizer.",
+      "Maintain physical distance of at least 1 meter from others.",
+      "Get vaccinated and stay updated with booster doses.",
+      "Avoid touching your face, especially eyes, nose, and mouth."
+    ],
+    "recent_advancements": [
+      "Development of mRNA vaccines like Pfizer-BioNTech and Moderna.",
+      "Introduction of antiviral drugs such as Remdesivir and Molnupiravir.",
+      "Advances in monoclonal antibody treatments for severe cases."
+    ],
+    "support_resources": [
+      "Online teleconsultation services for COVID-19 patients.",
+      "Mental health helplines for coping with pandemic-related stress.",
+      "Government portals for vaccination and health updates."
+    ]
+  }
+},
+"anxiety": {
+  "doctors": [
+    { 
+      "name": "Dr. Smita Sharma", 
+      "specialty": "Psychiatrist", 
+      "image": "lady18", 
+      "rating": 5, 
+      "experience": "20 years", 
+      "hospital": "AIIMS, Delhi", 
+      "contact": "+91-555-111-2222" 
+    },
+    { 
+      "name": "Dr. Arjun Malhotra", 
+      "specialty": "Clinical Psychologist", 
+      "image": "man19", 
+      "rating": 5, 
+      "experience": "18 years", 
+      "hospital": "NIMHANS, Bangalore", 
+      "contact": "+91-555-333-4444" 
+    },
+    { 
+      "name": "Dr. Priya Kapoor", 
+      "specialty": "Therapist (CBT Specialist)", 
+      "image": "lady19", 
+      "rating": 4, 
+      "experience": "15 years", 
+      "hospital": "Fortis Mental Health Centre, Mumbai", 
+      "contact": "+91-555-555-6666" 
+    },
+    { 
+      "name": "Dr. Rohan Iyer", 
+      "specialty": "Behavioral Therapist", 
+      "image": "man20", 
+      "rating": 4, 
+      "experience": "12 years", 
+      "hospital": "Apollo Hospitals, Chennai", 
+      "contact": "+91-555-777-8888" 
+    }
+  ],
+  "remedies": [
+    { 
+      "title": "Mindfulness Meditation",
+      "description": "Practice mindfulness techniques to calm the mind and focus on the present moment.",
+      "difficulty": "Medium",
+      "effectiveness": "High"
+    },
+    { 
+      "title": "Deep Breathing Exercises",
+      "description": "Engage in deep breathing (e.g., 4-7-8 technique) to reduce stress and lower anxiety levels.",
+      "difficulty": "Easy",
+      "effectiveness": "High"
+    },
+    { 
+      "title": "Physical Activity",
+      "description": "Regular exercise, like yoga or walking, releases endorphins and lowers stress.",
+      "difficulty": "Medium",
+      "effectiveness": "High"
+    },
+    { 
+      "title": "Journaling",
+      "description": "Write down anxious thoughts to understand triggers and process emotions.",
+      "difficulty": "Easy",
+      "effectiveness": "Medium"
+    },
+    { 
+      "title": "Aromatherapy",
+      "description": "Use essential oils like lavender or chamomile to promote relaxation and reduce anxiety.",
+      "difficulty": "Easy",
+      "effectiveness": "Medium"
+    },
+    { 
+      "title": "Caffeine Reduction",
+      "description": "Limit caffeine intake to avoid heightening anxious feelings.",
+      "difficulty": "Easy",
+      "effectiveness": "Medium"
+    }
+  ],
+  "videos": [
+    { 
+      "title": "Understanding Anxiety Disorders", 
+      "embedUrl": "https://www.youtube.com/embed/example1", 
+      "duration": 600, 
+      "ageGroup": "adults" 
+    },
+    { 
+      "title": "Techniques to Manage Anxiety", 
+      "embedUrl": "https://www.youtube.com/embed/example2", 
+      "duration": 480, 
+      "ageGroup": "adults" 
+    },
+    { 
+      "title": "Mindfulness Meditation for Anxiety", 
+      "embedUrl": "https://www.youtube.com/embed/example3", 
+      "duration": 540, 
+      "ageGroup": "adults" 
+    },
+    { 
+      "title": "Anxiety Awareness for Teens", 
+      "embedUrl": "https://www.youtube.com/embed/example4", 
+      "duration": 420, 
+      "ageGroup": "teens" 
+    },
+    { 
+      "title": "Cognitive Behavioral Therapy Explained", 
+      "embedUrl": "https://www.youtube.com/embed/example5", 
+      "duration": 600, 
+      "ageGroup": "adults" 
+    },
+    { 
+      "title": "Breathing Exercises for Stress Relief", 
+      "embedUrl": "https://www.youtube.com/embed/example6", 
+      "duration": 480, 
+      "ageGroup": "adults" 
+    }
+  ],
+  "overview": "Anxiety is a common mental health condition characterized by excessive worry, fear, and physical symptoms such as a racing heart or sweating. It can be triggered by stress, trauma, or even genetic factors. Treatments often include therapy, lifestyle changes, and, in some cases, medication. Anxiety is manageable with consistent self-care practices and professional support.",
+  
+},
+
+
     "Asthma": {
       doctors: [
         { name: 'Dr. Emily Johnson', specialty: 'Cardiologist', image: {lady4}, rating: 4, experience: '8 years', hospital: 'General Hospital', contact: '+1-555-123-4567' },
