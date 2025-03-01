@@ -18,6 +18,8 @@ const loadUserFromStorage = () => {
   }
 };
 
+
+
 const savedUser = loadUserFromStorage();
 
 const initialState = {
@@ -48,7 +50,7 @@ const authReducer = (state = initialState, action) => {
       const { email, password } = action.payload;
       const storedUser = loadUserFromStorage();
       
-      if (storedUser && storedUser.email === email && storedUser.password === password) {
+      if (storedUser && storedUser.user === email && storedUser.password === password) {
         return { 
           ...state, 
           user: storedUser, 
@@ -67,8 +69,7 @@ const authReducer = (state = initialState, action) => {
       // We keep the user in localStorage but update the state
       return { 
         ...state, 
-        isLoggedIn: false,
-        user: null 
+        isLoggedIn: false, 
       };
 
     case AUTH_ACTIONS.DELETE_ACCOUNT:

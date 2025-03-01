@@ -16,6 +16,13 @@ const Appointment = lazy(() => import('./Components/Explore/BookAppointmentPage'
 const About = lazy(() => import('./Components/About/About'));
 const Footer = lazy(() => import('./Components/Footer'));
 const Contact = lazy(() => import('./Components/Contact'));
+const Terms = lazy(() => import('./Components/Terms'));
+const Faq = lazy(() => import('./Components/Faq'));
+const Expo1 = lazy(() => import('./Components/Explore/expo1'));
+const Expo2 = lazy(() => import('./Components/Explore/expo2'));
+const Expo3 = lazy(() => import('./Components/Explore/expo3'));
+const Expo4 = lazy(() => import('./Components/Explore/expo4'));
+const Expo5 = lazy(() => import('./Components/Explore/expo5'));
 
 // Loading component
 const LoadingSpinner = memo(() => (
@@ -45,7 +52,14 @@ const ROUTES = [
   { path: '/Appointment/:doctorName', element: Appointment, exact: true },
   { path: '/signup', element: SignUp, exact: true },
   { path: '/About', element: About, exact: true },
-  { path: '/Contact', element: Contact, exact: true }
+  { path: '/Contact', element: Contact, exact: true },
+  { path: '/Terms', element: Terms, exact: true },
+  { path: '/Faq', element: Faq, exact: true },
+  { path: '/expo1', element: Expo1, exact: true },
+  { path: '/expo2', element: Expo2, exact: true },
+  { path: '/expo3', element: Expo3, exact: true },
+  { path: '/expo4', element: Expo4, exact: true },
+  { path: '/expo5', element: Expo5, exact: true }
 ];
 
 const App = memo(() => {
