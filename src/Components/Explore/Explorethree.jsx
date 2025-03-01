@@ -71,7 +71,7 @@ const Explorethree = () => {
       title: 'Dengue',
       subtitle: 'Mosquito-borne viral infection',
       shortDescription: 'Severe flu-like illness spread by mosquitoes.',
-      linkTo: '/diseases/dengue'
+      linkTo: '/expo2'
     },
     {
       id: 2,
@@ -80,7 +80,7 @@ const Explorethree = () => {
       title: 'Influenza',
       subtitle: 'Seasonal flu virus',
       shortDescription: 'A contagious respiratory illness caused by influenza viruses.',
-      linkTo: '/diseases/influenza'
+      linkTo: '/expo1'
     },
     {
       id: 3,
@@ -89,7 +89,7 @@ const Explorethree = () => {
       title: 'COVID-19',
       subtitle: 'Coronavirus disease',
       shortDescription: 'A respiratory illness caused by SARS-CoV-2.',
-      linkTo: '/diseases/covid19'
+      linkTo: '/expo3'
     },
     {
       id: 4,
@@ -98,7 +98,7 @@ const Explorethree = () => {
       title: 'Zika',
       subtitle: 'Mosquito-borne virus',
       shortDescription: 'A virus that can cause birth defects.',
-      linkTo: '/diseases/zika'
+      linkTo: '/expo4'
     },
     {
       id: 5,
@@ -107,7 +107,7 @@ const Explorethree = () => {
       title: 'Malaria',
       subtitle: 'Life-threatening disease',
       shortDescription: 'Caused by parasites transmitted by mosquitoes.',
-      linkTo: '/diseases/malaria'
+      linkTo: '/expo5'
     },
     {
       id: 6,
@@ -171,7 +171,7 @@ const Explorethree = () => {
   return (
     <div className="wrapper-cards">
       <h1>Explore More About Common Viral Diseases</h1>
-      <div className="Card-wrapper">{renderCards()}</div>
+      <div className="Card-wrapper-explore">{renderCards()}</div>
     </div>
   );
 };

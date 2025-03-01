@@ -101,13 +101,6 @@ const CuratedContentPage = () => {
             <div className="card-content-enhanced">
               <h2 className="content-title-enhanced">{card.title}</h2>
               <p className="content-description-enhanced">{card.desc}</p>
-              <motion.button 
-                className="action-button-enhanced"
-                whileHover={{ scale: 1.05, backgroundColor: '#1abc9c' }} // Reduced scale effect
-                transition={{ duration: 0.2 }}
-              >
-                {card.btn}
-              </motion.button>
             </div>
           </motion.div>
         ))}

@@ -1,4 +1,4 @@
-import { useEffect, useCallback, useState } from 'react';
+import { useEffect, useCallback, useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import './Homeone.css';
@@ -46,55 +46,148 @@ export default function Homeone() {
   }, []);
 
   const [videoCount, setVideoCount] = useState(0);
-  const maxVideos = 10;
+const maxVideos = 10;
 
-  const createVideo = useCallback((index) => {
-    const mobile = document.getElementById("mobile");
-    if (!mobile) return;
+// Use a ref to track mounted state
+const isMountedRef = useRef(true);
 
+// Add keyframe animation for spinner
+useEffect(() => {
+  const styleSheet = document.createElement('style');
+  styleSheet.textContent = `
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    
+    @keyframes slideInFromLeft {
+      0% { transform: translateX(-120%); }
+      100% { transform: translateX(0); }
+    }
+    
+    @keyframes slideInFromRight {
+      0% { transform: translateX(120%); }
+      100% { transform: translateX(0); }
+    }
+    
+    @keyframes slideOutToLeft {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-120%); }
+    }
+    
+    @keyframes slideOutToRight {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(120%); }
+    }
+    
+    .mobile-video {
+      position: absolute;
+      width: 80%;
+      height: 30px;
+      left: 10%;
+      background-color: #f5f5f5;
+      border-radius: 4px;
+      padding: 5px;
+      text-align: center;
+      font-size: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 5;
+    }
+    
+    .loading-spinner {
+      width: 15px;
+      height: 15px;
+      border: 2px solid #f3f3f3;
+      border-top: 2px solid #3498db;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin: 0 auto;
+    }
+  `;
+  document.head.appendChild(styleSheet);
+  
+  return () => {
+    if (styleSheet.parentNode) {
+      styleSheet.parentNode.removeChild(styleSheet);
+    }
+  };
+}, []);
+
+// Set mounted ref to false on unmount
+useEffect(() => {
+  return () => {
+    isMountedRef.current = false;
+  };
+}, []);
+
+// Mobile video animation
+useEffect(() => {
+  const mobile = document.getElementById("mobile");
+  if (!mobile) return;
+  
+  // Clear any existing videos
+  const existingVideos = mobile.querySelectorAll('.mobile-video');
+  existingVideos.forEach(video => video.remove());
+  
+  // Function to create a single video
+  const createSingleVideo = (index) => {
+    if (!isMountedRef.current) return;
+    
     const video = document.createElement("div");
-    video.classList.add("video");
-    video.innerText = `Video ${(index % maxVideos) + 1}`;
-    video.style.bottom = `${index * 40}px`;
-    video.style.width = '80%';
-    video.style.height = '30px';
-    video.style.left = '10%';
-
-    const direction = index % 2 === 0 ? "right" : "left";
-    video.style.transform = `translateX(${direction === "left" ? "-120%" : "120%"})`;
-
+    video.className = "mobile-video";
+    video.textContent = `Video ${(index % maxVideos) + 1}`;
+    video.style.bottom = `${20 + (index % 4) * 40}px`;
+    
+    const direction = index % 2 === 0 ? "Right" : "Left";
+    video.style.animation = `slideInFrom${direction} 0.5s forwards`;
+    
     mobile.appendChild(video);
-
-    video.style.animation = `slideIn${direction === "left" ? "Left" : "Right"} 3s ease-in-out`;
-
-    const spinnerTimeout = setTimeout(() => {
-      video.innerText = "";
+    
+    // Change to spinner after delay
+    setTimeout(() => {
+      if (!video.isConnected || !isMountedRef.current) return;
+      
+      video.textContent = "";
       const spinner = document.createElement("div");
-      spinner.classList.add("loading-spinner");
+      spinner.className = "loading-spinner";
       video.appendChild(spinner);
-    }, 2000);
+    }, 1500);
+    
+    // Slide out after delay
+    setTimeout(() => {
+      if (!video.isConnected || !isMountedRef.current) return;
+      
+      video.style.animation = `slideOutTo${direction} 0.5s forwards`;
+      
+      // Remove from DOM after animation
+      setTimeout(() => {
+        if (video.isConnected) {
+          video.remove();
+        }
+      }, 500);
+    }, 3000);
+  };
+  
+  // Create initial videos with staggered timing
+  for (let i = 0; i < 4; i++) {
+    setTimeout(() => createSingleVideo(i), i * 500);
+  }
+  
+  // Create new videos periodically
+  let currentIndex = 4;
+  const intervalId = setInterval(() => {
+    if (!isMountedRef.current) return;
+    createSingleVideo(currentIndex);
+    currentIndex++;
+  }, 2000);
+  
+  return () => {
+    clearInterval(intervalId);
+  };
+}, [maxVideos]);
 
-    const removeTimeout = setTimeout(() => {
-      if (video.parentNode) {
-        video.parentNode.removeChild(video);
-      }
-    }, 4000);
-
-    return () => {
-      clearTimeout(spinnerTimeout);
-      clearTimeout(removeTimeout);
-    };
-  }, [maxVideos]);
-
-  const startSequence = useCallback(() => {
-    createVideo(videoCount);
-    setVideoCount((prevCount) => (prevCount + 1) % maxVideos);
-  }, [createVideo, videoCount, maxVideos]);
-
-  useEffect(() => {
-    const intervalId = setInterval(startSequence, 2000);
-    return () => clearInterval(intervalId);
-  }, [startSequence]);
 
   const handleGetStarted = () => {
     // Use Redux state instead of localStorage

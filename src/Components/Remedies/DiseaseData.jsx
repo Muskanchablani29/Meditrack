@@ -407,99 +407,101 @@ export const diseaseData = {
       ],
       overview: "Malaria is a life-threatening disease caused by Plasmodium parasites, which are transmitted to humans through the bites of infected female Anopheles mosquitoes. Symptoms include fever, chills, headache, muscle pain, and fatigue. Severe cases can lead to complications such as organ failure or death. Prevention involves avoiding mosquito bites and taking antimalarial medications, while treatment includes specific antimalarial drugs."
     },
-    "Dengue":{
-      doctors: [
-        { name: 'Dr. Emily Johnson', specialty: 'Cardiologist', image: lady4, rating: 4, experience: '8 years', hospital: 'General Hospital', contact: '+1-555-123-4567' },
-        { name: 'Dr. Michael Brown', specialty: 'Blood Pressure Expert', image: man5, rating: 5, experience: '12 years', hospital: 'City Medical Center', contact: '+1-555-987-6543' }
-      ],
-      remedies: [
-        {
-          title: 'Rest and hydration',
-          description: 'Get plenty of rest and drink plenty of water to help your body fight the infection.',
-          difficulty: 'Easy',
-          effectiveness: 'High'
-        }
-        ,
-        {
-          title: 'Stay hydrated',
-          description: 'Drink plenty of water throughout the day to stay hydrated.',
-          difficulty: 'Easy',
-          effectiveness: 'High'
-        },
-        {
-          title: 'Wash your hands frequently',
-          description: 'Wash your hands thoroughly with soap and water or use hand sanitizer.',
-          difficulty: 'Easy',
-          effectiveness: 'High'
-        },
-        {
-          title: 'Avoid close contact with sick individuals',
-          description: 'Avoid close contact with sick individuals to reduce the risk of dengue transmission.',
-          difficulty: 'Medium',
-          effectiveness: 'High'
-        },
-        {
-          title: 'Practice good hygiene',
-          description: 'Cover your mouth when coughing or sneezing and wash your hands regularly.',
-          difficulty: 'Easy',
-          effectiveness: 'High'
-        }
-      ],
-      videos: [
-        { title: 'Dengue Fever Guide', embedUrl: '', duration: 360, ageGroup: 'adults' },
-        { title: 'Dengue Remedy', embedUrl: '', duration: 420, ageGroup: 'adults' },
-        { title: 'Dengue Prevention', embedUrl: '', duration: 480, ageGroup: 'seniors' },
-        { title: 'Dengue Awareness', embedUrl: '', duration: 300, ageGroup: 'children' },
-        { title: 'Dengue Treatment', embedUrl: '', duration: 540, ageGroup: 'adults' }
-      ],
-      overview: "Dengue fever is a viral infection caused by dengue virus. It spreads through the air when an infected person coughs, sneezes, or talks. Dengue fever is preventable and curable. Symptoms include high fever, headache, muscle and joint pain, nausea, vomiting, and diarrhea. Treatment typically involves rest, fluids, and antibiotics."
+    "Dengue": {
+  "doctors": [
+    { "name": "Dr. Neha Dutia", "specialty": "Infectious Disease Specialist", "image": "lady4", "rating": 4, "experience": "8 years", "hospital": "General Hospital", "contact": "+1-555-123-4567" },
+    { "name": "Dr. Mizima", "specialty": "Tropical Medicine Expert", "image": "lady5", "rating": 5, "experience": "12 years", "hospital": "City Medical Center", "contact": "+1-555-987-6543" }
+  ],
+  "remedies": [
+    {
+      "title": "Rest and hydration",
+      "description": "Get plenty of rest and drink plenty of water to help your body fight the infection.",
+      "difficulty": "Easy",
+      "effectiveness": "High"
     },
-    "Typhoid": {
-      doctors: [
-        { name: 'Dr. Emily Johnson', specialty: 'Cardiologist', image: lady4, rating: 4, experience: '8 years', hospital: 'General Hospital', contact: '+1-555-123-4567'},
-        { name: 'Dr. Michael Brown', specialty: 'Blood Pressure Expert', image: man5, rating: 5, experience: '12 years', hospital: 'City Medical Center', contact: '+00000000000000' }
-        ],
-      remedies: [
-        {
-          title: 'Rest and hydration',
-          description: 'Get plenty of rest and drink plenty of water to help your body fight the infection.',
-          difficulty: 'Easy',
-          effectiveness: 'High'
-        },
-        {
-          title: 'Stay hydrated',
-          description: 'Drink plenty of water throughout the day to stay hydrated.',
-          difficulty: 'Easy',
-          effectiveness: 'High'
-        },
-        {
-          title: 'Wash your hands frequently',
-          description: 'Wash your hands thoroughly with soap and water or use hand sanitizer.',
-          difficulty: 'Easy',
-          effectiveness: 'High'
-        },
-        {
-          title: 'Avoid close contact with sick individuals',
-          description: 'Avoid close contact with sick individuals to reduce the risk of typhoid fever transmission.',
-          difficulty: 'Medium',
-          effectiveness: 'High'
-        },
-        {
-          title: 'Practice good hygiene',
-          description: 'Cover your mouth when coughing or sneezing and wash your hands regularly.',
-          difficulty: 'Easy',
-          effectiveness: 'High'
-        }
-      ],
-      videos: [
-        { title: 'Typhoid Fever Guide', embedUrl: '', duration: 360, ageGroup: 'adults' },
-        { title: 'Typhoid Remedy', embedUrl: '', duration: 420, ageGroup: 'adults' },
-        { title: 'Typhoid Prevention', embedUrl: '', duration: 480, ageGroup: 'seniors' },
-        { title: 'Typhoid Awareness', embedUrl: '', duration: 300, ageGroup: 'children' },
-        { title: 'Typhoid Treatment', embedUrl: '', duration: 540, ageGroup: 'adults' }
-      ]
+    {
+      "title": "Stay hydrated",
+      "description": "Drink plenty of water throughout the day to stay hydrated.",
+      "difficulty": "Easy",
+      "effectiveness": "High"
     },
-    "cold_and_cough": {
+    {
+      "title": "Wash your hands frequently",
+      "description": "Wash your hands thoroughly with soap and water or use hand sanitizer.",
+      "difficulty": "Easy",
+      "effectiveness": "High"
+    },
+    {
+      "title": "Avoid mosquito bites",
+      "description": "Use mosquito repellent, wear protective clothing, and use bed nets to prevent mosquito bites.",
+      "difficulty": "Medium",
+      "effectiveness": "High"
+    },
+    {
+      "title": "Practice good hygiene",
+      "description": "Cover your mouth when coughing or sneezing and wash your hands regularly.",
+      "difficulty": "Easy",
+      "effectiveness": "High"
+    }
+  ],
+  "videos": [
+    { "title": "Dengue Fever Guide", "embedUrl": "https://www.youtube.com/embed/w4uUFn0LmXM", "duration": 360, "ageGroup": "adults" },
+    { "title": "Dengue Remedy", "embedUrl": "https://www.youtube.com/embed/bcgNrMjS5ag", "duration": 420, "ageGroup": "adults" },
+    { "title": "Dengue Prevention", "embedUrl": "https://www.youtube.com/embed/-1NgvJ1H9Xs", "duration": 480, "ageGroup": "seniors" },
+    { "title": "Dengue Awareness", "embedUrl": "https://www.youtube.com/embed/M73KBIel5io", "duration": 300, "ageGroup": "children" },
+    { "title": "Dengue Treatment", "embedUrl": "https://www.youtube.com/embed/Txza9etVZEs", "duration": 540, "ageGroup": "adults" }
+  ],
+  "overview": "Dengue fever is a viral infection transmitted by mosquitoes, particularly the Aedes aegypti mosquito. Symptoms include high fever, headache, muscle and joint pain, nausea, vomiting, and skin rash. Treatment typically involves rest, fluids, and pain relievers. Severe cases may require hospitalization."
+},
+
+"Typhoid": {
+  "doctors": [
+    { "name": "Dr. Emily Johnson", "specialty": "Infectious Disease Specialist", "image": "lady4", "rating": 4, "experience": "8 years", "hospital": "General Hospital", "contact": "+1-555-123-4567" },
+    { "name": "Dr. Michael Brown", "specialty": "Gastroenterologist", "image": "man5", "rating": 5, "experience": "12 years", "hospital": "City Medical Center", "contact": "+1-555-987-6543" }
+  ],
+  "remedies": [
+    {
+      "title": "Rest and hydration",
+      "description": "Get plenty of rest and drink plenty of water to help your body fight the infection.",
+      "difficulty": "Easy",
+      "effectiveness": "High"
+    },
+    {
+      "title": "Stay hydrated",
+      "description": "Drink plenty of water throughout the day to stay hydrated.",
+      "difficulty": "Easy",
+      "effectiveness": "High"
+    },
+    {
+      "title": "Wash your hands frequently",
+      "description": "Wash your hands thoroughly with soap and water or use hand sanitizer.",
+      "difficulty": "Easy",
+      "effectiveness": "High"
+    },
+    {
+      "title": "Food safety",
+      "description": "Eat only thoroughly cooked foods and drink only purified water to prevent typhoid infection.",
+      "difficulty": "Medium",
+      "effectiveness": "High"
+    },
+    {
+      "title": "Practice good hygiene",
+      "description": "Cover your mouth when coughing or sneezing and wash your hands regularly.",
+      "difficulty": "Easy",
+      "effectiveness": "High"
+    }
+  ],
+  "videos": [
+    { "title": "Typhoid Fever Guide", "embedUrl": "https://www.youtube.com/embed/KVP5jYvcFSg", "duration": 360, "ageGroup": "adults" },
+    { "title": "Typhoid Remedy", "embedUrl": "https://www.youtube.com/embed/s0RtwIYinjE", "duration": 420, "ageGroup": "adults" },
+    { "title": "Typhoid Prevention", "embedUrl": "https://www.youtube.com/embed/oUnzf7RiYvw", "duration": 480, "ageGroup": "seniors" },
+    { "title": "Typhoid Awareness", "embedUrl": "https://www.youtube.com/embed/Q2cVs_3O5Tw", "duration": 300, "ageGroup": "children" },
+    { "title": "Typhoid Treatment", "embedUrl": "https://www.youtube.com/embed/PLo5wbRxm1A", "duration": 540, "ageGroup": "adults" }
+  ],
+  "overview": "Typhoid fever is a bacterial infection caused by Salmonella typhi. It spreads through contaminated food and water. Symptoms include high fever, headache, abdominal pain, and constipation or diarrhea. Treatment typically involves antibiotics, rest, and fluids."
+},
+
+   "cold_and_cough": {
   "doctors": [
     { 
       "name": "Dr. Neha Sharma", 
@@ -564,37 +566,38 @@ export const diseaseData = {
   "videos": [
     { 
       "title": "Understanding Cold and Cough", 
-      "embedUrl": "https://www.youtube.com/embed/example1", 
+      "embedUrl": "https://www.youtube.com/embed/0XOWOY3rZ0k", 
       "duration": 600, 
       "ageGroup": "adults" 
     },
     { 
       "title": "Home Remedies for Cough", 
-      "embedUrl": "https://www.youtube.com/embed/example2", 
+      "embedUrl": "https://www.youtube.com/embed/wyOIDoh14pk", 
       "duration": 480, 
       "ageGroup": "adults" 
     },
     { 
       "title": "Cold Prevention Tips", 
-      "embedUrl": "https://www.youtube.com/embed/example3", 
+      "embedUrl": "https://www.youtube.com/embed/J11UcgS3UpY", 
       "duration": 540, 
       "ageGroup": "adults" 
     },
     { 
       "title": "Cough Awareness for Children", 
-      "embedUrl": "https://www.youtube.com/embed/example4", 
-      "duration": 420, 
+      "embedUrl": "https://www.youtube.com/embed/kMWY6Ci-PQs", 
+      "duration": 120, 
       "ageGroup": "children" 
     },
     { 
       "title": "Treating Cold and Cough", 
-      "embedUrl": "https://www.youtube.com/embed/example5", 
+      "embedUrl": "https://www.youtube.com/embed/JcpKq_6iTuM", 
       "duration": 480, 
       "ageGroup": "adults" 
     }
   ],
   "overview": "Cold and cough are common respiratory conditions caused by viral infections. Symptoms include a runny nose, sore throat, coughing, sneezing, and mild fever. While there is no cure, symptoms can be managed with home remedies, hydration, and over-the-counter medications. Preventive measures include maintaining hygiene, avoiding close contact with infected individuals, and boosting immunity through a healthy diet."
 },
+
 "migraine": {
   "doctors": [
     { 
@@ -660,38 +663,39 @@ export const diseaseData = {
   "videos": [
     { 
       "title": "Understanding Migraines", 
-      "embedUrl": "https://www.youtube.com/embed/example1", 
+      "embedUrl": "https://www.youtube.com/embed/NZ-H-3JkFgA", 
       "duration": 600, 
       "ageGroup": "adults" 
     },
     { 
       "title": "Migraine Triggers and Prevention", 
-      "embedUrl": "https://www.youtube.com/embed/example2", 
+      "embedUrl": "https://www.youtube.com/embed/oDfn2_H9i_0", 
       "duration": 480, 
       "ageGroup": "adults" 
     },
     { 
       "title": "Managing Migraine Pain", 
-      "embedUrl": "https://www.youtube.com/embed/example3", 
+      "embedUrl": "https://www.youtube.com/embed/1cp8A8-_j7c", 
       "duration": 540, 
       "ageGroup": "adults" 
     },
     { 
       "title": "Migraine Awareness for Children", 
-      "embedUrl": "https://www.youtube.com/embed/example4", 
+      "embedUrl": "https://www.youtube.com/embed/Kmcul0rT4Ps", 
       "duration": 420, 
       "ageGroup": "children" 
     },
     { 
       "title": "Treatment Options for Migraines", 
-      "embedUrl": "https://www.youtube.com/embed/example5", 
+      "embedUrl": "https://www.youtube.com/embed/vBEs7jnlJ6U", 
       "duration": 480, 
       "ageGroup": "adults" 
     }
   ],
   "overview": "Migraine is a neurological condition characterized by intense, throbbing headaches often accompanied by nausea, sensitivity to light and sound, and visual disturbances. Triggers include stress, hormonal changes, certain foods, and irregular sleep patterns. While there is no cure, migraines can be managed through lifestyle changes, medications, and preventive measures."
 },
-  "cancer": {
+
+"cancer": {
   "doctors": [
     { 
       "name": "Dr. Sunita Reddy", 
@@ -771,31 +775,31 @@ export const diseaseData = {
   "videos": [
     { 
       "title": "How to Support a Loved One with Cancer", 
-      "embedUrl": "https://www.youtube.com/embed/example6", 
+      "embedUrl": "https://www.youtube.com/embed/iPRthX8ixB8", 
       "duration": 600, 
       "ageGroup": "adults" 
     },
     { 
       "title": "Nutritional Tips for Cancer Patients", 
-      "embedUrl": "https://www.youtube.com/embed/example7", 
+      "embedUrl": "https://www.youtube.com/embed/IXEt_ZPPfjk", 
       "duration": 480, 
       "ageGroup": "adults" 
     },
     { 
       "title": "Introduction to Palliative Care", 
-      "embedUrl": "https://www.youtube.com/embed/example8", 
+      "embedUrl": "https://www.youtube.com/embed/A_fAvAUqTg0", 
       "duration": 540, 
       "ageGroup": "adults" 
     },
     { 
-      "title": "Children’s Guide to Understanding Cancer", 
-      "embedUrl": "https://www.youtube.com/embed/example9", 
+      "title": "Children's Guide to Understanding Cancer", 
+      "embedUrl": "https://www.youtube.com/embed/p7HM8saHkmY", 
       "duration": 480, 
       "ageGroup": "children" 
     },
     { 
       "title": "Success Stories of Cancer Survivors", 
-      "embedUrl": "https://www.youtube.com/embed/example10", 
+      "embedUrl": "https://www.youtube.com/embed/UbFjiWOBErA", 
       "duration": 600, 
       "ageGroup": "adults" 
     }
@@ -819,7 +823,8 @@ export const diseaseData = {
     ]
   }
 },
-  "coronavirus": {
+
+"coronavirus": {
   "doctors": [
     { 
       "name": "Dr. Anil Mathur", 
@@ -899,68 +904,43 @@ export const diseaseData = {
   "videos": [
     { 
       "title": "Understanding COVID-19 Symptoms and Prevention", 
-      "embedUrl": "https://www.youtube.com/embed/example1", 
+      "embedUrl": "https://www.youtube.com/embed/OkjCnIvTqGc", 
       "duration": 600, 
       "ageGroup": "adults" 
     },
     { 
       "title": "How to Use Masks Effectively", 
-      "embedUrl": "https://www.youtube.com/embed/example2", 
+      "embedUrl": "https://www.youtube.com/embed/6GChW_5F9uE", 
       "duration": 480, 
       "ageGroup": "adults" 
     },
     { 
       "title": "Home Care for COVID-19 Patients", 
-      "embedUrl": "https://www.youtube.com/embed/example3", 
+      "embedUrl": "https://www.youtube.com/embed/QmVlckKeZqc", 
       "duration": 540, 
       "ageGroup": "adults" 
     },
     { 
       "title": "COVID-19 Awareness for Children", 
-      "embedUrl": "https://www.youtube.com/embed/example4", 
+      "embedUrl": "https://www.youtube.com/embed/Sl0wS52z8Tg", 
       "duration": 420, 
       "ageGroup": "children" 
     },
     { 
       "title": "Vaccination and Its Importance", 
-      "embedUrl": "https://www.youtube.com/embed/example5", 
+      "embedUrl": "https://www.youtube.com/embed/vN30emwcNS4", 
       "duration": 600, 
-      "ageGroup": "adults" 
-    },
-    { 
-      "title": "Mental Health During the Pandemic", 
-      "embedUrl": "https://www.youtube.com/embed/example6", 
-      "duration": 480, 
       "ageGroup": "adults" 
     }
   ],
-  "overview": "Coronavirus disease (COVID-19) is caused by the SARS-CoV-2 virus. It primarily affects the respiratory system, with symptoms ranging from mild (fever, cough, fatigue) to severe (difficulty breathing, organ failure). Preventive measures include wearing masks, maintaining social distance, and getting vaccinated. Treatment focuses on symptom management and supportive care.",
-  "additional_content": {
-    "prevention_strategies": [
-      "Wear a properly fitted mask in crowded or enclosed spaces.",
-      "Wash hands frequently with soap and water or use hand sanitizer.",
-      "Maintain physical distance of at least 1 meter from others.",
-      "Get vaccinated and stay updated with booster doses.",
-      "Avoid touching your face, especially eyes, nose, and mouth."
-    ],
-    "recent_advancements": [
-      "Development of mRNA vaccines like Pfizer-BioNTech and Moderna.",
-      "Introduction of antiviral drugs such as Remdesivir and Molnupiravir.",
-      "Advances in monoclonal antibody treatments for severe cases."
-    ],
-    "support_resources": [
-      "Online teleconsultation services for COVID-19 patients.",
-      "Mental health helplines for coping with pandemic-related stress.",
-      "Government portals for vaccination and health updates."
-    ]
-  }
+  "overview": "Coronavirus disease (COVID-19) is caused by the SARS-CoV-2 virus. It primarily affects the respiratory system, with symptoms ranging from mild (fever, cough, fatigue) to severe (difficulty breathing, organ failure). Preventive measures include wearing masks, maintaining social distance, and getting vaccinated. Treatment focuses on symptom management and supportive care."
 },
 "anxiety": {
   "doctors": [
     { 
       "name": "Dr. Smita Sharma", 
       "specialty": "Psychiatrist", 
-      "image": "lady18", 
+      "image": lady5, 
       "rating": 5, 
       "experience": "20 years", 
       "hospital": "AIIMS, Delhi", 
@@ -969,7 +949,7 @@ export const diseaseData = {
     { 
       "name": "Dr. Arjun Malhotra", 
       "specialty": "Clinical Psychologist", 
-      "image": "man19", 
+      "image": man4, 
       "rating": 5, 
       "experience": "18 years", 
       "hospital": "NIMHANS, Bangalore", 
@@ -1035,193 +1015,206 @@ export const diseaseData = {
   "videos": [
     { 
       "title": "Understanding Anxiety Disorders", 
-      "embedUrl": "https://www.youtube.com/embed/example1", 
+      "embedUrl": "https://www.youtube.com/embed/8RTJCFTwuYc", 
       "duration": 600, 
       "ageGroup": "adults" 
     },
     { 
       "title": "Techniques to Manage Anxiety", 
-      "embedUrl": "https://www.youtube.com/embed/example2", 
+      "embedUrl": "https://www.youtube.com/embed/W3r7tMIXyBs", 
       "duration": 480, 
       "ageGroup": "adults" 
     },
     { 
       "title": "Mindfulness Meditation for Anxiety", 
-      "embedUrl": "https://www.youtube.com/embed/example3", 
-      "duration": 540, 
-      "ageGroup": "adults" 
-    },
-    { 
-      "title": "Anxiety Awareness for Teens", 
-      "embedUrl": "https://www.youtube.com/embed/example4", 
-      "duration": 420, 
-      "ageGroup": "teens" 
-    },
-    { 
-      "title": "Cognitive Behavioral Therapy Explained", 
-      "embedUrl": "https://www.youtube.com/embed/example5", 
-      "duration": 600, 
-      "ageGroup": "adults" 
-    },
-    { 
-      "title": "Breathing Exercises for Stress Relief", 
-      "embedUrl": "https://www.youtube.com/embed/example6", 
-      "duration": 480, 
+      "embedUrl": "https://www.youtube.com/embed/KUhaEO108vs", 
+      "duration": 840, 
       "ageGroup": "adults" 
     }
   ],
-  "overview": "Anxiety is a common mental health condition characterized by excessive worry, fear, and physical symptoms such as a racing heart or sweating. It can be triggered by stress, trauma, or even genetic factors. Treatments often include therapy, lifestyle changes, and, in some cases, medication. Anxiety is manageable with consistent self-care practices and professional support.",
-  
+  "overview": "Anxiety is a common mental health condition characterized by excessive worry, fear, and physical symptoms such as a racing heart or sweating. It can be triggered by stress, trauma, or even genetic factors. Treatments often include therapy, lifestyle changes, and, in some cases, medication. Anxiety is manageable with consistent self-care practices and professional support."
 },
 
-
-    "Asthma": {
-      doctors: [
-        { name: 'Dr. Emily Johnson', specialty: 'Cardiologist', image: {lady4}, rating: 4, experience: '8 years', hospital: 'General Hospital', contact: '+1-555-123-4567' },
-        { name: 'Dr. Michael Brown', specialty: 'Blood Pressure Expert', image: {man5}, rating: 5, experience: '12 years', hospital: 'City Medical Center', contact: '+1-555-987-6543' }
-      ],
-      remedies: [
-        { 
-          title: 'Reduce salt intake',
-          description: 'Limit sodium to less than 2,300 mg per day.',
-          difficulty: 'Medium',
-          effectiveness: 'Medium'
-        },
-        { 
-          title: 'Stay active',
-          description: 'Regular physical activity helps control asthma symptoms.',
-          difficulty: 'Medium',
-          effectiveness: 'High'
-        },
-        { 
-          title: 'Manage stress',
-          description: 'Practice relaxation techniques to reduce asthma triggers.',
-          difficulty: 'Medium',
-          effectiveness: 'Medium'
-        },
-        { 
-          title: 'Increase potassium intake',
-          description: 'Consume potassium-rich foods to help balance electrolytes.',
-          difficulty: 'Easy',
-          effectiveness: 'Low'
-        }
-      ],
-      videos: [
-        { title: 'Hypertension Guide', embedUrl: 'https://www.youtube.com/embed/vD6YpXcNv6c', duration: 360, ageGroup: 'adults' },
-        { title: 'Lower Blood Pressure Exercises', embedUrl: 'https://www.youtube.com/embed/3s7XbPSJOpM', duration: 420, ageGroup: 'adults' }
-      ],
-      overview: "Asthma is a condition in which your airways narrow and swell and may produce extra mucus. This can make breathing difficult and trigger coughing, a whistling sound (wheezing) when you breathe out and shortness of breath."
+"Asthma": {
+  "doctors": [
+    { "name": "Dr. Emily Johnson", "specialty": "Pulmonologist", "image": "lady4", "rating": 4, "experience": "8 years", "hospital": "General Hospital", "contact": "+1-555-123-4567" },
+    { "name": "Dr. Michael Brown", "specialty": "Respiratory Specialist", "image": "man5", "rating": 5, "experience": "12 years", "hospital": "City Medical Center", "contact": "+1-555-987-6543" }
+  ],
+  "remedies": [
+    { 
+      "title": "Reduce allergen exposure",
+      "description": "Minimize contact with known triggers like dust, pollen, and pet dander.",
+      "difficulty": "Medium",
+      "effectiveness": "High"
     },
-    "HIV": {
-      doctors: [
-        { name: 'Dr. Emily Johnson', specialty: 'Cardiologist', image: 'https://via.placeholder.com/100', rating: 4, experience: '8 years', hospital: 'General Hospital', contact: '+1-555-123-4567' },
-        { name: 'Dr. Michael Brown', specialty: 'Blood Pressure Expert', image: 'https://via.placeholder.com/100', rating: 5, experience: '12 years', hospital: 'City Medical Center', contact: '+1-555-987-6543' }
-      ],
-      remedies: [
-        { 
-          title: 'Reduce salt intake',
-          description: 'Limit sodium to less than 2,300 mg per day.',
-          difficulty: 'Medium',
-          effectiveness: 'Medium'
-        },
-        { 
-          title: 'Stay active',
-          description: 'Regular physical activity helps maintain overall health.',
-          difficulty: 'Medium',
-          effectiveness: 'Medium'
-        },
-        { 
-          title: 'Manage stress',
-          description: 'Practice relaxation techniques to support immune function.',
-          difficulty: 'Medium',
-          effectiveness: 'Medium'
-        },
-        { 
-          title: 'Increase potassium intake',
-          description: 'Consume potassium-rich foods to help balance electrolytes.',
-          difficulty: 'Easy',
-          effectiveness: 'Low'
-        }
-      ],
-      videos: [
-        { title: 'Hypertension Guide', embedUrl: 'https://www.youtube.com/embed/vD6YpXcNv6c', duration: 360, ageGroup: 'adults' },
-        { title: 'Lower Blood Pressure Exercises', embedUrl: 'https://www.youtube.com/embed/3s7XbPSJOpM', duration: 420, ageGroup: 'adults' }
-      ],
-      overview: "HIV (human immunodeficiency virus) is a virus that attacks the body's immune system. If HIV is not treated, it can lead to AIDS (acquired immunodeficiency syndrome)."
+    { 
+      "title": "Stay active",
+      "description": "Regular physical activity helps control asthma symptoms.",
+      "difficulty": "Medium",
+      "effectiveness": "High"
     },
-    "Zika Virus": {
-      doctors: [
-        { name: 'Dr. Emily Johnson', specialty: 'Cardiologist', image: 'https://via.placeholder.com/100', rating: 4, experience: '8 years', hospital: 'General Hospital', contact: '+1-555-123-4567' },
-        { name: 'Dr. Michael Brown', specialty: 'Blood Pressure Expert', image: 'https://via.placeholder.com/100', rating: 5, experience: '12 years', hospital: 'City Medical Center', contact: '+1-555-987-6543' }
-      ],
-      remedies: [
-        { 
-          title: 'Reduce salt intake',
-          description: 'Limit sodium to less than 2,300 mg per day.',
-          difficulty: 'Medium',
-          effectiveness: 'Low'
-        },
-        { 
-          title: 'Stay active',
-          description: 'Regular physical activity helps maintain overall health.',
-          difficulty: 'Medium',
-          effectiveness: 'Medium'
-        },
-        { 
-          title: 'Manage stress',
-          description: 'Practice relaxation techniques to support recovery.',
-          difficulty: 'Medium',
-          effectiveness: 'Medium'
-        },
-        { 
-          title: 'Increase potassium intake',
-          description: 'Consume potassium-rich foods to help balance electrolytes.',
-          difficulty: 'Easy',
-          effectiveness: 'Low'
-        }
-      ],
-      videos: [
-        { title: 'Hypertension Guide', embedUrl: 'https://www.youtube.com/embed/vD6YpXcNv6c', duration: 360, ageGroup: 'adults' },
-        { title: 'Lower Blood Pressure Exercises', embedUrl: 'https://www.youtube.com/embed/3s7XbPSJOpM', duration: 420, ageGroup: 'adults' }
-      ],
-      overview: "Zika virus is a mosquito-borne flavivirus that was first identified in Uganda in 1947 in monkeys. It was later identified in humans in 1952 in Uganda and the United Republic of Tanzania."
+    { 
+      "title": "Manage stress",
+      "description": "Practice relaxation techniques to reduce asthma triggers.",
+      "difficulty": "Medium",
+      "effectiveness": "Medium"
     },
-    "Polio": {
-      doctors: [
-        { name: 'Dr. Emily Johnson', specialty: 'Cardiologist', image: 'https://via.placeholder.com/100', rating: 4, experience: '8 years', hospital: 'General Hospital', contact: '+1-555-123-4567' },
-        { name: 'Dr. Michael Brown', specialty: 'Blood Pressure Expert', image: 'https://via.placeholder.com/100', rating: 5, experience: '12 years', hospital: 'City Medical Center', contact: '+1-555-987-6543' }
-      ],
-      remedies: [
-        { 
-          title: 'Reduce salt intake',
-          description: 'Limit sodium to less than 2,300 mg per day.',
-          difficulty: 'Medium',
-          effectiveness: 'Low'
-        },
-        { 
-          title: 'Stay active',
-          description: 'Regular physical activity helps maintain mobility.',
-          difficulty: 'Medium',
-          effectiveness: 'Medium'
-        },
-        { 
-          title: 'Manage stress',
-          description: 'Practice relaxation techniques to support recovery.',
-          difficulty: 'Medium',
-          effectiveness: 'Medium'
-        },
-        { 
-          title: 'Increase potassium intake',
-          description: 'Consume potassium-rich foods to help balance electrolytes.',
-          difficulty: 'Easy',
-          effectiveness: 'Low'
-        }
-      ],
-      videos: [
-        { title: 'Hypertension Guide', embedUrl: 'https://www.youtube.com/embed/vD6YpXcNv6c', duration: 360, ageGroup: 'adults' },
-        { title: 'Lower Blood Pressure Exercises', embedUrl: 'https://www.youtube.com/embed/3s7XbPSJOpM', duration: 420, ageGroup: 'adults' }
-      ],
-      overview: "Polio, or poliomyelitis, is a disabling and life-threatening disease caused by the poliovirus. The virus spreads from person to person and can infect a person's spinal cord, causing paralysis."
+    { 
+      "title": "Maintain healthy weight",
+      "description": "Being overweight can worsen asthma symptoms.",
+      "difficulty": "Medium",
+      "effectiveness": "Medium"
     }
+  ],
+  "videos": [
+    { "title": "Asthma Management Guide", "embedUrl": "https://www.youtube.com/embed/a81044nxI9I", "duration": 360, "ageGroup": "adults" },
+    { "title": "Asthma Breathing Exercises", "embedUrl": "https://www.youtube.com/embed/-1G4Ta_8NNs", "duration": 420, "ageGroup": "adults" },
+    { "title": "Asthma Awareness", "embedUrl": "https://www.youtube.com/embed/c7zXIO6SFkY", "duration": 600, "ageGroup": "seniors" },
+    { "title": "Asthma Management for Children", "embedUrl": "https://www.youtube.com/embed/JwRG8AsStLQ", "duration": 480, "ageGroup": "children" }
+  ],
+  "overview": "Asthma is a condition in which your airways narrow and swell and may produce extra mucus. This can make breathing difficult and trigger coughing, a whistling sound (wheezing) when you breathe out and shortness of breath."
+},
+
+"HIV": {
+  "doctors": [
+    { "name": "Dr. Sarah Wilson", "specialty": "Infectious Disease Specialist", "image": "lady5", "rating": 5, "experience": "15 years", "hospital": "HIV Care Center", "contact": "+1-555-123-4567" },
+    { "name": "Dr. James Martinez", "specialty": "Immunologist", "image": "man6", "rating": 5, "experience": "12 years", "hospital": "City Medical Center", "contact": "+1-555-987-6543" }
+  ],
+  "remedies": [
+    { 
+      "title": "Maintain medication adherence",
+      "description": "Take antiretroviral therapy (ART) medications exactly as prescribed.",
+      "difficulty": "Medium",
+      "effectiveness": "High"
+    },
+    { 
+      "title": "Stay active",
+      "description": "Regular physical activity helps maintain overall health.",
+      "difficulty": "Medium",
+      "effectiveness": "Medium"
+    },
+    { 
+      "title": "Manage stress",
+      "description": "Practice relaxation techniques to support immune function.",
+      "difficulty": "Medium",
+      "effectiveness": "Medium"
+    },
+    { 
+      "title": "Nutritious diet",
+      "description": "Eat a balanced diet rich in fruits, vegetables, and lean proteins.",
+      "difficulty": "Medium",
+      "effectiveness": "Medium"
+    }
+  ],
+  "videos": [
+    { "title": "Understanding HIV Treatment", "embedUrl": "https://www.youtube.com/embed/vzKKVQwmvMM", "duration": 360, "ageGroup": "adults" },
+    { "title": "Living Well with HIV", "embedUrl": "https://www.youtube.com/embed/_HnomuKVJmE", "duration": 420, "ageGroup": "adults" },
+    { "title": "HIV Management", "embedUrl": "https://www.youtube.com/embed/-wuUnJlP8HI", "duration": 600, "ageGroup": "adults" },
+    { "title": "HIV Education", "embedUrl": "https://www.youtube.com/embed/h9JvNNj-EKU", "duration": 480, "ageGroup": "adults" }
+  ],
+  "overview": "HIV (human immunodeficiency virus) is a virus that attacks the body's immune system. If HIV is not treated, it can lead to AIDS (acquired immunodeficiency syndrome)."
+},
+
+"Zika Virus": {
+  "doctors": [
+    { "name": "Dr. Lisa Chen", "specialty": "Infectious Disease Specialist", "image": "lady7", "rating": 5, "experience": "10 years", "hospital": "Tropical Disease Center", "contact": "+1-555-123-4567" },
+    { "name": "Dr. Robert Garcia", "specialty": "Virologist", "image": "man8", "rating": 5, "experience": "14 years", "hospital": "Research Medical Center", "contact": "+1-555-987-6543" }
+  ],
+  "remedies": [
+    { 
+      "title": "Rest and hydration",
+      "description": "Get plenty of rest and drink fluids to prevent dehydration.",
+      "difficulty": "Easy",
+      "effectiveness": "Medium"
+    },
+    { 
+      "title": "Pain management",
+      "description": "Take acetaminophen to reduce fever and pain.",
+      "difficulty": "Easy",
+      "effectiveness": "Medium"
+    },
+    { 
+      "title": "Mosquito prevention",
+      "description": "Use insect repellent and wear protective clothing.",
+      "difficulty": "Easy",
+      "effectiveness": "High"
+    },
+    { 
+      "title": "Supportive care",
+      "description": "Treat symptoms while the body fights the infection.",
+      "difficulty": "Medium",
+      "effectiveness": "Medium"
+    }
+  ],
+  "videos": [
+    { "title": "Zika Virus Explained", "embedUrl": "https://www.youtube.com/embed/WfFAup0qXrU", "duration": 360, "ageGroup": "adults" },
+    { "title": "Preventing Zika Infection", "embedUrl": "https://www.youtube.com/embed/LSqcfZ407L0", "duration": 420, "ageGroup": "adults" }
+  ],
+  "overview": "Zika virus is a mosquito-borne flavivirus that was first identified in Uganda in 1947 in monkeys. It was later identified in humans in 1952 in Uganda and the United Republic of Tanzania."
+},
+
+    "Polio": {
+  doctors: [
+    { 
+      name: 'Dr. Emily Johnson', 
+      specialty: 'Cardiologist', 
+      image: 'https://via.placeholder.com/100', 
+      rating: 4, 
+      experience: '8 years', 
+      hospital: 'General Hospital', 
+      contact: '+1-555-123-4567' 
+    },
+    { 
+      name: 'Dr. Michael Brown', 
+      specialty: 'Blood Pressure Expert', 
+      image: 'https://via.placeholder.com/100', 
+      rating: 5, 
+      experience: '12 years', 
+      hospital: 'City Medical Center', 
+      contact: '+1-555-987-6543' 
+    }
+  ],
+  remedies: [
+    { 
+      title: 'Reduce salt intake',
+      description: 'Limit sodium to less than 2,300 mg per day.',
+      difficulty: 'Medium',
+      effectiveness: 'Low'
+    },
+    { 
+      title: 'Stay active',
+      description: 'Regular physical activity helps maintain mobility.',
+      difficulty: 'Medium',
+      effectiveness: 'Medium'
+    },
+    { 
+      title: 'Manage stress',
+      description: 'Practice relaxation techniques to support recovery.',
+      difficulty: 'Medium',
+      effectiveness: 'Medium'
+    },
+    { 
+      title: 'Increase potassium intake',
+      description: 'Consume potassium-rich foods to help balance electrolytes.',
+      difficulty: 'Easy',
+      effectiveness: 'Low'
+    }
+  ],
+  videos: [
+    { 
+      title: 'Polio Remedy', 
+      embedUrl: 'https://www.youtube.com/embed/AlFfZKXRzHY', 
+      duration: 360, 
+      ageGroup: 'adults' 
+    },
+    { 
+      title: 'Polio Cure', 
+      embedUrl: 'https://www.youtube.com/embed/UxgSHZku4yU', 
+      duration: 420, 
+      ageGroup: 'adults' 
+    }
+  ], 
+  overview: "Polio, or poliomyelitis, is a disabling and life-threatening disease caused by the poliovirus. The virus spreads from person to person and can infect a person's spinal cord, causing paralysis."
+}
   };
   

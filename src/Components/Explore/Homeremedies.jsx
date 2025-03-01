@@ -135,7 +135,7 @@ const HomeRemedies = () => {
   return (
     <div className="container-remedies-home">
       <div className="title-section">
-        <h1 className="title">Natural Home Remedies</h1>
+        <h1 className="title-page">Natural Home Remedies</h1>
         <p className="subtitle">
           Discover traditional healing methods using natural ingredients that have been 
           passed down through generations to treat common ailments.

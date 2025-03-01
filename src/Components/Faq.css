@@ -1,0 +1,151 @@
+
+  
+  /* Container for the FAQ Section */
+  .section1 {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 50px;
+  }
+  
+  /* Heading Styles */
+  h1 {
+    text-align: center;
+    color: #2c3e50;
+    font-size: 36px;
+    margin-bottom: 40px;
+    font-weight: bold;
+  }
+  
+  /* Description Section Styling */
+  .description {
+    padding: 10px 20px;
+  }
+  
+  /* Style for the Details element (collapsible FAQ items) */
+  details {
+    background-color: #ffffff;
+    border: 2px solid #f1f1f1;
+    margin: 15px 0;
+    padding: 15px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+  }
+  
+  details:hover {
+    border-color: #3498db;
+  }
+  
+  /* Summary Styling (Clickable Question) */
+  summary {
+    font-size: 20px;
+    font-weight: bold;
+    color: #2980b9;
+    cursor: pointer;
+    margin-bottom: 15px;
+    transition: color 0.3s ease;
+  }
+  
+  /* Hover Effect for Summary */
+  summary:hover {
+    color: #1abc9c;
+  }
+  
+  /* Answer Styling (Content of FAQ) */
+  details p {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.8;
+    padding: 10px 0;
+  }
+  
+  /* Styling for collapsible sections when opened */
+  details[open] summary {
+    color: #1abc9c;
+  }
+  
+  details[open] p {
+    background-color: #f9f9f9;
+    padding: 10px;
+    border-radius: 4px;
+    margin-top: 10px;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .section1 {
+        padding: 20px;
+    }
+  
+    h1 {
+        font-size: 28px;
+    }
+  
+    summary {
+        font-size: 18px;
+    }
+  
+    details p {
+        font-size: 14px;
+    }
+  }
+
+  .ai-question-container {
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .ai-question-container h2 {
+    color: #2c3e50;
+    margin-bottom: 15px;
+  }
+  
+  .question-input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    margin-bottom: 15px;
+  }
+  
+  .ask-button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+  }
+  
+  .ask-button:hover {
+    background-color: #2980b9;
+  }
+  
+  .ask-button:disabled {
+    background-color: #95a5a6;
+    cursor: not-allowed;
+  }
+  
+  .ai-answer {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #fff;
+    border-left: 4px solid #3498db;
+    border-radius: 4px;
+  }
+  
+  .ai-answer h3 {
+    color: #2c3e50;
+    margin-bottom: 10px;
+  }
+  

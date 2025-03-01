@@ -8,6 +8,7 @@ import {
   faLinkedinIn, 
   faYoutube 
 } from '@fortawesome/free-brands-svg-icons';
+import { NavLink } from 'react-router-dom';
 
 const Footer = () => {
   return (
@@ -78,10 +79,10 @@ const Footer = () => {
         </div>
         <div className="footer-links">
             <ul>
-                <li>Help</li>
-                <li>Privacy</li>
-                <li>Terms</li>
-                <li>FAQ</li>
+                <NavLink to=""><li>Help</li></NavLink>
+                <NavLink to=""><li>Privacy</li></NavLink>
+                <NavLink to="/terms"><li>Terms</li></NavLink>
+                <NavLink to="/Faq"><li>FAQ</li></NavLink>
             </ul>
         </div>
     </div>
