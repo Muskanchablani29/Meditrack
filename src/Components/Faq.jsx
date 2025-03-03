@@ -21,7 +21,7 @@ export default function Faq() {
       
       const requestBody = {
         contents: [{
-          parts: [{ text: userQuestion }]
+          parts: [{ text: userQuestion }] 
         }]
       };
       console.log("Request body:", JSON.stringify(requestBody));
