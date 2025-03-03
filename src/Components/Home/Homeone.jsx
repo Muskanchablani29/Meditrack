@@ -226,9 +226,9 @@ useEffect(() => {
                 </div>
               </div>
             </div>
-            <div className="devicetwo">
+            {/* <div className="devicetwo">
               <div className="mobile" id="mobile"></div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
