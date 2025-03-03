@@ -1,397 +1,781 @@
 /* Enhanced Footer Styling with Green Color Palette and Background Animation */
 .footer-content {
-    background: linear-gradient(135deg, #0a2e1f 0%, #145a32 100%);
-    padding: 40px 20px;
-    color: #fff;
-    position: relative;
-    overflow: hidden;
+  background: linear-gradient(135deg, #0a2e1f 0%, #145a32 100%);
+  padding: 40px 20px;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Animated background particles */
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, #2ecc71, #27ae60, #1abc9c);
+  animation: borderGlow 3s linear infinite;
+}
+
+/* Background animation */
+.footer::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(circle at 25% 25%, rgba(46, 204, 113, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 75% 75%, rgba(39, 174, 96, 0.1) 0%, transparent 50%);
+  animation: backgroundPulse 15s ease-in-out infinite alternate;
+  z-index: 0;
+}
+
+@keyframes backgroundPulse {
+  0% {
+    background-position: 0% 0%;
   }
-  
-  /* Animated background particles */
-  .footer::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 3px;
-    background: linear-gradient(90deg, #2ecc71, #27ae60, #1abc9c);
-    animation: borderGlow 3s linear infinite;
+  100% {
+    background-position: 100% 100%;
   }
-  
-  /* Background animation */
-  .footer::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: 
-      radial-gradient(circle at 25% 25%, rgba(46, 204, 113, 0.1) 0%, transparent 50%),
-      radial-gradient(circle at 75% 75%, rgba(39, 174, 96, 0.1) 0%, transparent 50%);
-    animation: backgroundPulse 15s ease-in-out infinite alternate;
-    z-index: 0;
+}
+
+@keyframes borderGlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes floatingBubbles {
+  0% {
+    transform: translateY(0) translateX(0) scale(1);
+    opacity: 0;
   }
-  
-  @keyframes backgroundPulse {
-    0% {
-      background-position: 0% 0%;
-    }
-    100% {
-      background-position: 100% 100%;
-    }
+  50% {
+    opacity: 0.3;
+    transform: translateY(-50px) scale(1.1);
   }
-  
-  @keyframes borderGlow {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+  100% {
+    transform: translateY(-100vh) translateX(20px) scale(1);
+    opacity: 0;
   }
-  
-  @keyframes floatingBubbles {
-    0% {
-      transform: translateY(0) translateX(0);
-      opacity: 0;
-    }
-    50% {
-      opacity: 0.3;
-    }
-    100% {
-      transform: translateY(-100vh) translateX(20px);
-      opacity: 0;
-    }
+}
+
+/* Create floating bubbles */
+.bubble {
+  position: absolute;
+  bottom: -100px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(46, 204, 113, 0.1);
+  animation: floatingBubbles 15s infinite;
+  z-index: 1;
+}
+
+.bubble:nth-child(1) {
+  left: 10%;
+  width: 80px;
+  height: 80px;
+  animation-duration: 25s;
+}
+
+.bubble:nth-child(2) {
+  left: 20%;
+  width: 25px;
+  height: 25px;
+  animation-duration: 20s;
+  animation-delay: 2s;
+}
+
+.bubble:nth-child(3) {
+  left: 35%;
+  width: 50px;
+  height: 50px;
+  animation-duration: 18s;
+  animation-delay: 5s;
+}
+
+.bubble:nth-child(4) {
+  left: 50%;
+  width: 60px;
+  height: 60px;
+  animation-duration: 22s;
+  animation-delay: 1s;
+}
+
+.bubble:nth-child(5) {
+  left: 65%;
+  width: 30px;
+  height: 30px;
+  animation-duration: 19s;
+  animation-delay: 4s;
+}
+
+.bubble:nth-child(6) {
+  left: 80%;
+  width: 70px;
+  height: 70px;
+  animation-duration: 21s;
+  animation-delay: 3s;
+}
+
+.icons {
+  text-align: center;
+  margin-bottom: 30px;
+  position: relative;
+  z-index: 2;
+}
+
+.icons h1 {
+  font-size: 1.8rem;
+  margin-bottom: 30px;
+  text-shadow: 0 0 10px rgba(46, 204, 113, 0.5);
+  letter-spacing: 1px;
+  position: relative;
+  display: inline-block;
+  color: #e8f8f5;
+  opacity: 0; /* Start hidden for fade-in effect */
+  animation: fadeIn 1s forwards; /* Fade-in animation */
+}
+
+@keyframes fadeIn {
+  to {
+      opacity: 1;
   }
-  
-  /* Create floating bubbles */
-  .bubble {
-    position: absolute;
-    bottom: -100px;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background: rgba(46, 204, 113, 0.1);
-    animation: floatingBubbles 15s infinite;
-    z-index: 1;
-  }
-  
-  .bubble:nth-child(1) {
-    left: 10%;
-    width: 80px;
-    height: 80px;
-    animation-duration: 25s;
-  }
-  
-  .bubble:nth-child(2) {
-    left: 20%;
-    width: 25px;
-    height: 25px;
-    animation-duration: 20s;
-    animation-delay: 2s;
-  }
-  
-  .bubble:nth-child(3) {
-    left: 35%;
-    width: 50px;
-    height: 50px;
-    animation-duration: 18s;
-    animation-delay: 5s;
-  }
-  
-  .bubble:nth-child(4) {
-    left: 50%;
-    width: 60px;
-    height: 60px;
-    animation-duration: 22s;
-    animation-delay: 1s;
-  }
-  
-  .bubble:nth-child(5) {
-    left: 65%;
-    width: 30px;
-    height: 30px;
-    animation-duration: 19s;
-    animation-delay: 4s;
-  }
-  
-  .bubble:nth-child(6) {
-    left: 80%;
-    width: 70px;
-    height: 70px;
-    animation-duration: 21s;
-    animation-delay: 3s;
-  }
-  
-  .icons {
-    text-align: center;
-    margin-bottom: 30px;
-    position: relative;
-    z-index: 2;
-  }
-  
+}
+
+.icons-con {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 25px;
+  margin-top: 20px;
+}
+
+.icons a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: white;
+  position: relative;
+  transition: transform 0.3s ease;
+  z-index: 2;
+}
+
+.icons a:hover {
+  transform: translateY(-5px);
+}
+
+.icons a .layer {
+  width: 75px;
+  height: 75px;
+  position: relative;
+  transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  perspective: 1000px;
+}
+
+.icons a .text {
+  margin-top: 15px;
+  font-size: 14px;
+  font-weight: 500;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: all 0.4s ease;
+  letter-spacing: 1px;
+  color: #e8f8f5;
+}
+
+/* Enhanced hover effects */
+.icons a:hover .layer {
+  transform: rotate(-35deg) skew(20deg) scale(1.1);
+  filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.5));
+}
+
+.icons a:hover .text {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.icons a .layer span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+  transition: all 0.4s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(3px);
+}
+
+/* Create 3D layered effect with green tints */
+.icons a .layer span:nth-child(1) {
+  opacity: 0.2;
+  transform: translate(0, 0);
+  background: rgba(46, 204, 113, 0.05);
+}
+
+.icons a .layer span:nth-child(2) {
+  opacity: 0.4;
+  transform: translate(5px, -5px);
+  background: rgba(46, 204, 113, 0.1);
+}
+
+.icons a .layer span:nth-child(3) {
+  opacity: 0.6;
+  transform: translate(10px, -10px);
+  background: rgba(46, 204, 113, 0.15);
+}
+
+.icons a .layer span:nth-child(4) {
+  opacity: 0.8;
+  transform: translate(15px, -15px);
+  background: rgba(46, 204, 113, 0.2);
+}
+
+/* Enhanced hover effects for each layer */
+.icons a:hover .layer span:nth-child(1) {
+  opacity: 0.1;
+  transform: translate(0, 0);
+}
+
+.icons a:hover .layer span:nth-child(2) {
+  opacity: 0.3;
+  transform: translate(10px, -10px);
+}
+
+.icons a:hover .layer span:nth-child(3) {
+  opacity: 0.5;
+  transform: translate(20px, -20px);
+}
+
+.icons a:hover .layer span:nth-child(4) {
+  opacity: 0.7;
+  transform: translate(30px, -30px);
+}
+
+/* Icon styling */
+.icons a .layer .fab {
+  font-size: 35px;
+  color: #e8f8f5;
+  position: relative;
+  z-index: 5;
+  text-shadow: 0 0 10px rgba(46, 204, 113, 0.5);
+  transition: all 0.3s ease;
+}
+
+/* Icon color on hover - green variants */
+.icons a:nth-child(1):hover .layer .fab { color: #2ecc71; }
+.icons a:nth-child(2):hover .layer .fab { color: #1abc9c; }
+.icons a:nth-child(3):hover .layer .fab { color: #27ae60; }
+.icons a:nth-child(4):hover .layer .fab { color: #16a085; }
+.icons a:nth-child(5):hover .layer .fab { color: #2ecc71; }
+
+/* Pulse animation for icons */
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+.icons a:hover .layer .fab {
+  animation: pulse 1s infinite;
+}
+
+/* Glow effect on hover */
+@keyframes glow {
+  0% { box-shadow: 0 0 5px rgba(46, 204, 113, 0.5); }
+  50% { box-shadow: 0 0 20px rgba(46, 204, 113, 0.8); }
+  100% { box-shadow: 0 0 5px rgba(46, 204, 113, 0.5); }
+}
+
+.icons a:hover .layer span:nth-child(4) {
+  animation: glow 1.5s infinite;
+}
+
+/* Footer links styling */
+.footer-links {
+  text-align: center;
+  border-top: 1px solid rgba(46, 204, 113, 0.3);
+  padding-top: 20px;
+  margin-top: 20px;
+  position: relative;
+  z-index: 2;
+}
+
+.footer-links ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin: 0 15px;
+  position: relative;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  color: #e8f8f5;
+}
+
+.footer-links li:hover {
+  color: #2ecc71;
+  transform: translateY(-2px);
+}
+
+.footer-links li::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #2ecc71, #27ae60);
+  transition: width 0.3s ease;
+}
+
+.footer-links li:hover::after {
+  width: 100%;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
   .icons h1 {
-    font-size: 1.8rem;
-    margin-bottom: 30px;
-    text-shadow: 0 0 10px rgba(46, 204, 113, 0.5);
-    letter-spacing: 1px;
-    position: relative;
-    display: inline-block;
-    color: #e8f8f5;
-  }
-  
-  .icons h1::after {
-    content: '';
-    position: absolute;
-    bottom: -10px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 80px;
-    height: 3px;
-    background: linear-gradient(90deg, #2ecc71, #27ae60);
+      font-size: 1.4rem;
   }
   
   .icons-con {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 25px;
-    margin-top: 20px;
-  }
-  
-  .icons a {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-decoration: none;
-    color: white;
-    position: relative;
-    transition: transform 0.3s ease;
-    z-index: 2;
-  }
-  
-  .icons a:hover {
-    transform: translateY(-5px);
+      gap: 15px;
   }
   
   .icons a .layer {
-    width: 75px;
-    height: 75px;
-    position: relative;
-    transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    perspective: 1000px;
-  }
-  
-  .icons a .text {
-    margin-top: 15px;
-    font-size: 14px;
-    font-weight: 500;
-    opacity: 0;
-    transform: translateY(-10px);
-    transition: all 0.4s ease;
-    letter-spacing: 1px;
-    color: #e8f8f5;
-  }
-  
-  /* Enhanced hover effects */
-  .icons a:hover .layer {
-    transform: rotate(-35deg) skew(20deg) scale(1.1);
-    filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.5));
-  }
-  
-  .icons a:hover .text {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  
-  .icons a .layer span {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    border-radius: 8px;
-    transition: all 0.4s;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    backdrop-filter: blur(3px);
-  }
-  
-  /* Create 3D layered effect with green tints */
-  .icons a .layer span:nth-child(1) {
-    opacity: 0.2;
-    transform: translate(0, 0);
-    background: rgba(46, 204, 113, 0.05);
-  }
-  
-  .icons a .layer span:nth-child(2) {
-    opacity: 0.4;
-    transform: translate(5px, -5px);
-    background: rgba(46, 204, 113, 0.1);
-  }
-  
-  .icons a .layer span:nth-child(3) {
-    opacity: 0.6;
-    transform: translate(10px, -10px);
-    background: rgba(46, 204, 113, 0.15);
-  }
-  
-  .icons a .layer span:nth-child(4) {
-    opacity: 0.8;
-    transform: translate(15px, -15px);
-    background: rgba(46, 204, 113, 0.2);
-  }
-  
-  /* Enhanced hover effects for each layer */
-  .icons a:hover .layer span:nth-child(1) {
-    opacity: 0.1;
-    transform: translate(0, 0);
-  }
-  
-  .icons a:hover .layer span:nth-child(2) {
-    opacity: 0.3;
-    transform: translate(10px, -10px);
-  }
-  
-  .icons a:hover .layer span:nth-child(3) {
-    opacity: 0.5;
-    transform: translate(20px, -20px);
-  }
-  
-  .icons a:hover .layer span:nth-child(4) {
-    opacity: 0.7;
-    transform: translate(30px, -30px);
-  }
-  
-  /* Icon styling */
-  .icons a .layer .fab {
-    font-size: 35px;
-    color: #e8f8f5;
-    position: relative;
-    z-index: 5;
-    text-shadow: 0 0 10px rgba(46, 204, 113, 0.5);
-    transition: all 0.3s ease;
-  }
-  
-  /* Icon color on hover - green variants */
-  .icons a:nth-child(1):hover .layer .fab { color: #2ecc71; }
-  .icons a:nth-child(2):hover .layer .fab { color: #1abc9c; }
-  .icons a:nth-child(3):hover .layer .fab { color: #27ae60; }
-  .icons a:nth-child(4):hover .layer .fab { color: #16a085; }
-  .icons a:nth-child(5):hover .layer .fab { color: #2ecc71; }
-  
-  /* Pulse animation for icons */
-  @keyframes pulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.1); }
-    100% { transform: scale(1); }
-  }
-  
-  .icons a:hover .layer .fab {
-    animation: pulse 1s infinite;
-  }
-  
-  /* Glow effect on hover */
-  @keyframes glow {
-    0% { box-shadow: 0 0 5px rgba(46, 204, 113, 0.5); }
-    50% { box-shadow: 0 0 20px rgba(46, 204, 113, 0.8); }
-    100% { box-shadow: 0 0 5px rgba(46, 204, 113, 0.5); }
-  }
-  
-  .icons a:hover .layer span:nth-child(4) {
-    animation: glow 1.5s infinite;
-  }
-  
-  /* Footer links styling */
-  .footer-links {
-    text-align: center;
-    border-top: 1px solid rgba(46, 204, 113, 0.3);
-    padding-top: 20px;
-    margin-top: 20px;
-    position: relative;
-    z-index: 2;
-  }
-  
-  .footer-links ul {
-    display: flex;
-    justify-content: center;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  .footer-links li {
-    margin: 0 15px;
-    position: relative;
-    cursor: pointer;
-    font-size: 14px;
-    transition: all 0.3s ease;
-    color: #e8f8f5;
-  }
-  
-  .footer-links li:hover {
-    color: #2ecc71;
-    transform: translateY(-2px);
-  }
-  
-  .footer-links li::after {
-    content: '';
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: linear-gradient(90deg, #2ecc71, #27ae60);
-    transition: width 0.3s ease;
-  }
-  
-  .footer-links li:hover::after {
-    width: 100%;
-  }
-  
-  /* Media queries for responsiveness */
-  @media (max-width: 768px) {
-    .icons h1 {
-      font-size: 1.4rem;
-    }
-    
-    .icons-con {
-      gap: 15px;
-    }
-    
-    .icons a .layer {
       width: 60px;
       height: 60px;
-    }
-    
-    .icons a .layer .fab {
-      font-size: 28px;
-    }
-    
-    .icons a:hover .layer span:nth-child(4) {
-      transform: translate(20px, -20px);
-    }
-    
-    .bubble {
-      display: none;
-    }
-    
-    .bubble:nth-child(1),
-    .bubble:nth-child(4) {
-      display: block;
-    }
   }
   
-  /* For extra large icons on larger screens */
-  @media (min-width: 1200px) {
-    .icons a .layer {
+  .icons a .layer .fab {
+      font-size: 28px;
+  }
+  
+  .icons a:hover .layer span:nth-child(4) {
+      transform: translate(20px, -20px);
+  }
+  
+  .bubble {
+      display: none;
+  }
+  
+  .bubble:nth-child(1),
+  .bubble:nth-child(4) {
+      display: block;
+  }
+}
+
+/* For extra large icons on larger screens */
+@media (min-width: 1200px) {
+  .icons a .layer {
       width: 85px;
       height: 85px;
-    }
-    
-    .icons a .layer .fab {
-      font-size: 40px;
-    }
   }
   
+  .icons a .layer .fab {
+      font-size: 40px;
+  }
+}
+
+
+/* Animated background particles */
+.footer::before {
+content: '';
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 3px;
+background: linear-gradient(90deg, #2ecc71, #27ae60, #1abc9c);
+animation: borderGlow 3s linear infinite;
+}
+
+/* Background animation */
+.footer::after {
+content: '';
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background-image: 
+  radial-gradient(circle at 25% 25%, rgba(46, 204, 113, 0.1) 0%, transparent 50%),
+  radial-gradient(circle at 75% 75%, rgba(39, 174, 96, 0.1) 0%, transparent 50%);
+animation: backgroundPulse 15s ease-in-out infinite alternate;
+z-index: 0;
+}
+
+@keyframes backgroundPulse {
+0% {
+  background-position: 0% 0%;
+}
+100% {
+  background-position: 100% 100%;
+}
+}
+
+@keyframes borderGlow {
+0% { background-position: 0% 50%; }
+50% { background-position: 100% 50%; }
+100% { background-position: 0% 50%; }
+}
+
+@keyframes floatingBubbles {
+0% {
+  transform: translateY(0) translateX(0) scale(1);
+  opacity: 0;
+}
+50% {
+  opacity: 0.3;
+  transform: translateY(-50px) scale(1.1);
+}
+100% {
+  transform: translateY(-100vh) translateX(20px) scale(1);
+  opacity: 0;
+}
+}
+
+/* Create floating bubbles */
+.bubble {
+position: absolute;
+bottom: -100px;
+width: 40px;
+height: 40px;
+border-radius: 50%;
+background: rgba(46, 204, 113, 0.1);
+animation: floatingBubbles 15s infinite;
+z-index: 1;
+}
+
+.bubble:nth-child(1) {
+left: 10%;
+width: 80px;
+height: 80px;
+animation-duration: 25s;
+}
+
+.bubble:nth-child(2) {
+left: 20%;
+width: 25px;
+height: 25px;
+animation-duration: 20s;
+animation-delay: 2s;
+}
+
+.bubble:nth-child(3) {
+left: 35%;
+width: 50px;
+height: 50px;
+animation-duration: 18s;
+animation-delay: 5s;
+}
+
+.bubble:nth-child(4) {
+left: 50%;
+width: 60px;
+height: 60px;
+animation-duration: 22s;
+animation-delay: 1s;
+}
+
+.bubble:nth-child(5) {
+left: 65%;
+width: 30px;
+height: 30px;
+animation-duration: 19s;
+animation-delay: 4s;
+}
+
+.bubble:nth-child(6) {
+left: 80%;
+width: 70px;
+height: 70px;
+animation-duration: 21s;
+animation-delay: 3s;
+}
+
+.icons {
+text-align: center;
+margin-bottom: 30px;
+position: relative;
+z-index: 2;
+}
+
+.icons h1 {
+font-size: 1.8rem;
+margin-bottom: 30px;
+text-shadow: 0 0 10px rgba(46, 204, 113, 0.5);
+letter-spacing: 1px;
+position: relative;
+display: inline-block;
+color: #e8f8f5;
+opacity: 0; /* Start hidden for fade-in effect */
+animation: fadeIn 1s forwards; /* Fade-in animation */
+}
+
+@keyframes fadeIn {
+to {
+    opacity: 1;
+}
+}
+
+.icons-con {
+display: flex;
+justify-content: center;
+flex-wrap: wrap;
+gap: 25px;
+margin-top: 20px;
+}
+
+.icons a {
+display: flex;
+flex-direction: column;
+align-items: center;
+text-decoration: none;
+color: white;
+position: relative;
+transition: transform 0.3s ease;
+z-index: 2;
+}
+
+.icons a:hover {
+transform: translateY(-5px);
+}
+
+.icons a .layer {
+width: 75px;
+height: 75px;
+position: relative;
+transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+perspective: 1000px;
+}
+
+.icons a .text {
+margin-top: 15px;
+font-size: 14px;
+font-weight: 500;
+opacity: 0;
+transform: translateY(-10px);
+transition: all 0.4s ease;
+letter-spacing: 1px;
+color: #e8f8f5;
+}
+
+/* Enhanced hover effects */
+.icons a:hover .layer {
+transform: rotate(-35deg) skew(20deg) scale(1.1);
+filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.5));
+}
+
+.icons a:hover .text {
+opacity: 1;
+transform: translateY(0);
+}
+
+.icons a .layer span {
+position: absolute;
+top: 0;
+left: 0;
+height: 100%;
+width: 100%;
+border: 1px solid rgba(255, 255, 255, 0.3);
+border-radius: 8px;
+transition: all 0.4s;
+display: flex;
+align-items: center;
+justify-content: center;
+backdrop-filter: blur(3px);
+}
+
+/* Create 3D layered effect with green tints */
+.icons a .layer span:nth-child(1) {
+opacity: 0.2;
+transform: translate(0, 0);
+background: rgba(46, 204, 113, 0.05);
+}
+
+.icons a .layer span:nth-child(2) {
+opacity: 0.4;
+transform: translate(5px, -5px);
+background: rgba(46, 204, 113, 0.1);
+}
+
+.icons a .layer span:nth-child(3) {
+opacity: 0.6;
+transform: translate(10px, -10px);
+background: rgba(46, 204, 113, 0.15);
+}
+
+.icons a .layer span:nth-child(4) {
+opacity: 0.8;
+transform: translate(15px, -15px);
+background: rgba(46, 204, 113, 0.2);
+}
+
+/* Enhanced hover effects for each layer */
+.icons a:hover .layer span:nth-child(1) {
+opacity: 0.1;
+transform: translate(0, 0);
+}
+
+.icons a:hover .layer span:nth-child(2) {
+opacity: 0.3;
+transform: translate(10px, -10px);
+}
+
+.icons a:hover .layer span:nth-child(3) {
+opacity: 0.5;
+transform: translate(20px, -20px);
+}
+
+.icons a:hover .layer span:nth-child(4) {
+opacity: 0.7;
+transform: translate(30px, -30px);
+}
+
+/* Icon styling */
+.icons a .layer .fab {
+font-size: 35px;
+color: #e8f8f5;
+position: relative;
+z-index: 5;
+text-shadow: 0 0 10px rgba(46, 204, 113, 0.5);
+transition: all 0.3s ease;
+}
+
+/* Icon color on hover - green variants */
+.icons a:nth-child(1):hover .layer .fab { color: #2ecc71; }
+.icons a:nth-child(2):hover .layer .fab { color: #1abc9c; }
+.icons a:nth-child(3):hover .layer .fab { color: #27ae60; }
+.icons a:nth-child(4):hover .layer .fab { color: #16a085; }
+.icons a:nth-child(5):hover .layer .fab { color: #2ecc71; }
+
+/* Pulse animation for icons */
+@keyframes pulse {
+0% { transform: scale(1); }
+50% { transform: scale(1.1); }
+100% { transform: scale(1); }
+}
+
+.icons a:hover .layer .fab {
+animation: pulse 1s infinite;
+}
+
+/* Glow effect on hover */
+@keyframes glow {
+0% { box-shadow: 0 0 5px rgba(46, 204, 113, 0.5); }
+50% { box-shadow: 0 0 20px rgba(46, 204, 113, 0.8); }
+100% { box-shadow: 0 0 5px rgba(46, 204, 113, 0.5); }
+}
+
+.icons a:hover .layer span:nth-child(4) {
+animation: glow 1.5s infinite;
+}
+
+/* Footer links styling */
+.footer-links {
+text-align: center;
+border-top: 1px solid rgba(46, 204, 113, 0.3);
+padding-top: 20px;
+margin-top: 20px;
+position: relative;
+z-index: 2;
+}
+
+.footer-links ul {
+display: flex;
+justify-content: center;
+list-style: none;
+padding: 0;
+margin: 0;
+}
+
+.footer-links li {
+margin: 0 15px;
+position: relative;
+cursor: pointer;
+font-size: 14px;
+transition: all 0.3s ease;
+color: #e8f8f5;
+}
+
+.footer-links li:hover {
+color: #2ecc71;
+transform: translateY(-2px);
+}
+
+.footer-links li::after {
+content: '';
+position: absolute;
+bottom: -5px;
+left: 0;
+width: 0;
+height: 2px;
+background: linear-gradient(90deg, #2ecc71, #27ae60);
+transition: width 0.3s ease;
+}
+
+.footer-links li:hover::after {
+width: 100%;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+.icons h1 {
+    font-size: 1.4rem;
+}
+
+.icons-con {
+    gap: 15px;
+}
+
+.icons a .layer {
+    width: 60px;
+    height: 60px;
+}
+
+.icons a .layer .fab {
+    font-size: 28px;
+}
+
+.icons a:hover .layer span:nth-child(4) {
+    transform: translate(20px, -20px);
+}
+
+.bubble {
+    display: none;
+}
+
+.bubble:nth-child(1),
+.bubble:nth-child(4) {
+    display: block;
+}
+}
+
+/* For extra large icons on larger screens */
+@media (min-width: 1200px) {
+.icons a .layer {
+    width: 85px;
+    height: 85px;
+}
+
+.icons a .layer .fab {
+    font-size: 40px;
+}
+}
